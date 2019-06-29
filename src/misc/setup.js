@@ -127,7 +127,7 @@ const createChampions = () => {
     createChampion(4, 'Cho\'gath',      VOID,               BRAWLER);
     createChampion(4, 'Draven',         IMPERIAL,           BLADEMASTER);
     createChampion(4, 'Gnar',           [WILD, YORDLE],     SHAPESHIFTER);
-    createChampion(4, 'Kindred',        WILD,               RANGER);
+    createChampion(4, 'Kindred',        WILD,               PHANTOM);
     createChampion(4, 'Leona',          NOBLE,              GUARDIAN);
     createChampion(4, 'Sejuani',        GLACIAL,            KNIGHT);
     createChampion(5, 'Anivia',         GLACIAL,            ELEMENTALIST);
