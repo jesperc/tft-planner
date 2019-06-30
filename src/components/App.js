@@ -36,23 +36,42 @@ export default class App extends Component {
             <div>
                 {this.renderStatus()}
                 <hr />
-                {this.renderChampions(true)}
+                {this.renderSelectedChampions()}
                 <hr />
-                {this.renderChampions(false)}
+                {this.renderAllChampions()}
             </div>
         )
     }
 
-    renderChampions = (selected) => {
-        const champions = this.state.champions.filter(c => c.selected == selected);
+    renderSelectedChampions() {
+        const champions = this.state.champions.filter(c => c.selected === true);
+        console.log(champions);
         return (
             <div>
                 {champions.map(x => 
                     <Champion 
+                        key={`sc${x.champion.id}`} 
+                        champion={x.champion} 
+                        selected={true}
+                        onClick={this.onClick}
+                        markAsSelected={false}
+                    />
+                )}
+            </div>
+        );
+    }
+
+    renderAllChampions() {
+        
+        return (
+            <div>
+                {this.state.champions.map(x => 
+                    <Champion 
                         key={`ac${x.champion.id}`} 
                         champion={x.champion} 
-                        selected={selected}
+                        selected={x.selected}
                         onClick={this.onClick}
+                        markAsSelected={x.selected}
                     />
                 )}
             </div>
@@ -84,6 +103,8 @@ export default class App extends Component {
             intervals[x] = origins.find(o => o.name === x) || roles.find(r => r.name === x);
         });
 
+        console.log(origins.concat(roles));
+
         // create a status per origin/role
         const statuses = [];
         const keys = Object.keys(counts);
@@ -95,15 +116,13 @@ export default class App extends Component {
             });
         }
 
-        console.log(statuses);
-
         if (statuses.length <= 0) {
             return null;
         }
 
         return (
             <ul>
-                {statuses.map(x => <Status {...x}/>)}
+                {statuses.map(x => <Status key={`s${x.name}`} {...x}/>)}
             </ul>
         );
     }

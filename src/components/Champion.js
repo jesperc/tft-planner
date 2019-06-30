@@ -1,10 +1,12 @@
 import React from 'react';
 import './Champion.css';
 
-export const Champion = ({champion, selected, onClick}) => {
+export const Champion = ({champion, selected, onClick, markAsSelected}) => {
     return (
-        <div class='champion' onClick={() => onClick(champion.id, selected)}>
-            {`${selected ? '(S)' : ''}${champion.name}`}
+        <div 
+            className={`champion ${markAsSelected ? 'selected' : ''}`} 
+            onClick={() => onClick(champion.id, selected)}>
+            {champion.name}
         </div>
     );
 };

@@ -23,7 +23,7 @@ const ELEMENTALIST = 3;
 const GUARDIAN = 4;
 const GUNSLINGER = 5;
 const KNIGHT = 6;
-const RANGER = 8;
+const RANGER = 7;
 const SHAPESHIFTER = 8;
 const SORCERER = 9;
 
@@ -67,6 +67,7 @@ const createOrigins = () => {
     createOrigin(VOID,      'Void',     'rgb(255, 0, 0)', [3]);
     createOrigin(WILD,      'Wild',     'rgb(255, 0, 0)', [2, 4]);
     createOrigin(YORDLE,    'Yordle',   'rgb(255, 0, 0)', [3, 6]);
+    createOrigin(GLACIAL,   'Glacial',  'rgb(255, 0, 0)', [2, 4, 6]);
 };
 
 const createRoles = () => {
@@ -127,7 +128,7 @@ const createChampions = () => {
     createChampion(4, 'Cho\'gath',      VOID,               BRAWLER);
     createChampion(4, 'Draven',         IMPERIAL,           BLADEMASTER);
     createChampion(4, 'Gnar',           [WILD, YORDLE],     SHAPESHIFTER);
-    createChampion(4, 'Kindred',        WILD,               PHANTOM);
+    createChampion(4, 'Kindred',        [WILD, PHANTOM],    RANGER);
     createChampion(4, 'Leona',          NOBLE,              GUARDIAN);
     createChampion(4, 'Sejuani',        GLACIAL,            KNIGHT);
     createChampion(5, 'Anivia',         GLACIAL,            ELEMENTALIST);
