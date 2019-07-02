@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { setup, getChampions, getRoles, getOrigins } from '../misc/setup';
-import Status from './Status';
-import Champion from './Champion';
+import './App.css';
+import { setup, getChampions, getRoles, getOrigins } from '../../misc/setup';
+import Status from '../Status/Status';
+import ChampionGrid from '../ChampionGrid/ChampionGrid';
+import Champion from '../Champion/Champion';
 
 export default class App extends Component {
     constructor() {
@@ -27,6 +29,12 @@ export default class App extends Component {
         this.setState({ champions });
     }
 
+    onReset = () => {
+        const champions = this.state.champions;
+        champions.forEach(c => c.selected = false);
+        this.setState({ champions });
+    }
+
     render() {
         if (this.state == null) {
             return <div>Loading...</div>;
@@ -35,19 +43,17 @@ export default class App extends Component {
         return (
             <div>
                 {this.renderStatus()}
-                <hr />
                 {this.renderSelectedChampions()}
-                <hr />
-                {this.renderAllChampions()}
+                <button style={{position: 'absolute', top: '240px', cursor: 'pointer'}} onClick={() => this.onReset()}>Reset</button>
+                <ChampionGrid champions={this.state.champions} onClick={this.onClick} />
             </div>
         )
     }
 
     renderSelectedChampions() {
         const champions = this.state.champions.filter(c => c.selected === true);
-        console.log(champions);
         return (
-            <div>
+            <div className='selected-content'>
                 {champions.map(x => 
                     <Champion 
                         key={`sc${x.champion.id}`} 
@@ -55,23 +61,6 @@ export default class App extends Component {
                         selected={true}
                         onClick={this.onClick}
                         markAsSelected={false}
-                    />
-                )}
-            </div>
-        );
-    }
-
-    renderAllChampions() {
-        
-        return (
-            <div>
-                {this.state.champions.map(x => 
-                    <Champion 
-                        key={`ac${x.champion.id}`} 
-                        champion={x.champion} 
-                        selected={x.selected}
-                        onClick={this.onClick}
-                        markAsSelected={x.selected}
                     />
                 )}
             </div>
@@ -103,8 +92,6 @@ export default class App extends Component {
             intervals[x] = origins.find(o => o.name === x) || roles.find(r => r.name === x);
         });
 
-        console.log(origins.concat(roles));
-
         // create a status per origin/role
         const statuses = [];
         const keys = Object.keys(counts);
@@ -121,9 +108,11 @@ export default class App extends Component {
         }
 
         return (
-            <ul>
-                {statuses.map(x => <Status key={`s${x.name}`} {...x}/>)}
-            </ul>
+            <div className='status-content'>
+                <ul>
+                    {statuses.map(x => <Status key={`s${x.name}`} {...x}/>)}
+                </ul>
+            </div>
         );
     }
 };

@@ -1,0 +1,14 @@
+.champions {
+    position: absolute;
+    top: 270px;
+}
+
+table {
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+}
