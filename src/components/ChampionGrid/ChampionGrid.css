@@ -1,11 +1,10 @@
 .champions {
     position: absolute;
-    top: 270px;
+    top: 350px;
 }
 
 table {
-    border-spacing: 10px;
-    border-collapse: separate;
+    
 }
 
 td {

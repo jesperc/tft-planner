@@ -55,5 +55,6 @@ table {
 
 .selected-content {
 	position: absolute;
-	top: 200px;
+	top: 240px;
+	left: 260px;
 }

@@ -29,7 +29,7 @@ export const Status = ({count, name, item}) => {
     return (
         <li className='status-li'>
             <p>
-                <img className='status-image' alt='status' style={style} src={item.image} />
+                <img width='30px' className='status-image' alt='status' style={style} src={item.image} />
                 <span className='status-text'>{`${count} ${name} (${interval.join(', ')})`}</span>
             </p>
         </li>

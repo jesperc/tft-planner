@@ -44,7 +44,7 @@ export default class App extends Component {
             <div>
                 {this.renderStatus()}
                 {this.renderSelectedChampions()}
-                <button style={{position: 'absolute', top: '240px', cursor: 'pointer'}} onClick={() => this.onReset()}>Reset</button>
+                <button style={{position: 'absolute', top: '310px', left: '270px', cursor: 'pointer'}} onClick={() => this.onReset()}>Reset</button>
                 <ChampionGrid champions={this.state.champions} onClick={this.onClick} />
             </div>
         )
