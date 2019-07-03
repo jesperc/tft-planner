@@ -86,10 +86,10 @@ export default class App extends Component {
 
         // count origins/roles
         const counts = {};
-        const intervals = {};
+        const items = {};
         origins.concat(roles).map(x => x.name).forEach(x => { 
             counts[x] = (counts[x] || 0) + 1; 
-            intervals[x] = origins.find(o => o.name === x) || roles.find(r => r.name === x);
+            items[x] = origins.find(o => o.name === x) || roles.find(r => r.name === x);
         });
 
         // create a status per origin/role
@@ -99,7 +99,7 @@ export default class App extends Component {
             statuses.push({ 
                 name: key,
                 count: counts[key],  
-                interval: intervals[key].interval
+                item: items[key]
             });
         }
 

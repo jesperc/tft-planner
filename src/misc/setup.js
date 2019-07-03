@@ -1,6 +1,7 @@
 import Origin from '../models/origin';
 import Role from '../models/role';
 import Champion from '../models/champion';
+import * as images from './images'; 
 
 const DEMON = 0;
 const DRAGON = 1;
@@ -32,15 +33,15 @@ let roles = [];
 let champions = [];
 let championId = 0;
 
-const createOrigin = (id, name, color, interval) => {
-    origins.push(new Origin({id, name, color, interval}));
+const createOrigin = (image, id, name, color, interval) => {
+    origins.push(new Origin({image, id, name, color, interval}));
 };
 
-const createRole = (id, name, interval) => {
-    roles.push(new Role({id, name, interval}));
+const createRole = (image, id, name, interval) => {
+    roles.push(new Role({image, id, name, interval}));
 };
 
-const createChampion = (tier, name, origin, role) => {
+const createChampion = (image, tier, name, origin, role) => {
     let origins = origin;
     if (origin.constructor !== Array) {
         origins = [origin];
@@ -50,93 +51,93 @@ const createChampion = (tier, name, origin, role) => {
         roles = [role];
     }
 
-    champions.push(new Champion({tier, id: championId++, name, origins, roles}));
+    champions.push(new Champion({image, tier, id: championId++, name, origins, roles}));
 };
 
 const createOrigins = () => {
     origins = [];
-    createOrigin(DEMON,     'Demon',    'rgb(255, 0, 0)', [2, 4, 6]);
-    createOrigin(DRAGON,    'Dragon',   'rgb(255, 0, 0)', [2]);
-    createOrigin(EXILE,     'Exile',    'rgb(255, 0, 0)', [1]);
-    createOrigin(IMPERIAL,  'Imperial', 'rgb(255, 0, 0)', [2, 4]);
-    createOrigin(NOBLE,     'Noble',    'rgb(255, 0, 0)', [3, 6]);
-    createOrigin(NINJA,     'Ninja',    'rgb(255, 0, 0)', [1, 4]);
-    createOrigin(PHANTOM,   'Phantom',  'rgb(255, 0, 0)', [2]);
-    createOrigin(PIRATE,    'Pirate',   'rgb(255, 0, 0)', [3]);
-    createOrigin(ROBOT,     'Robot',    'rgb(255, 0, 0)', [1]);
-    createOrigin(VOID,      'Void',     'rgb(255, 0, 0)', [3]);
-    createOrigin(WILD,      'Wild',     'rgb(255, 0, 0)', [2, 4]);
-    createOrigin(YORDLE,    'Yordle',   'rgb(255, 0, 0)', [3, 6]);
-    createOrigin(GLACIAL,   'Glacial',  'rgb(255, 0, 0)', [2, 4, 6]);
+    createOrigin(images.demon,      DEMON,     'Demon',    'rgb(255, 0, 0)', [2, 4, 6]);
+    createOrigin(images.dragon,     DRAGON,    'Dragon',   'rgb(255, 0, 0)', [2]);
+    createOrigin(images.exile,      EXILE,     'Exile',    'rgb(255, 0, 0)', [1]);
+    createOrigin(images.imperial,   IMPERIAL,  'Imperial', 'rgb(255, 0, 0)', [2, 4]);
+    createOrigin(images.noble,      NOBLE,     'Noble',    'rgb(255, 0, 0)', [3, 6]);
+    createOrigin(images.ninja,      NINJA,     'Ninja',    'rgb(255, 0, 0)', [1, 4]);
+    createOrigin(images.phantom,    PHANTOM,   'Phantom',  'rgb(255, 0, 0)', [2]);
+    createOrigin(images.pirate,     PIRATE,    'Pirate',   'rgb(255, 0, 0)', [3]);
+    createOrigin(images.robot,      ROBOT,     'Robot',    'rgb(255, 0, 0)', [1]);
+    createOrigin(images.voidd,      VOID,      'Void',     'rgb(255, 0, 0)', [3]);
+    createOrigin(images.wild,       WILD,      'Wild',     'rgb(255, 0, 0)', [2, 4]);
+    createOrigin(images.yordle,     YORDLE,    'Yordle',   'rgb(255, 0, 0)', [3, 6]);
+    createOrigin(images.glacial,    GLACIAL,   'Glacial',  'rgb(255, 0, 0)', [2, 4, 6]);
 };
 
 const createRoles = () => {
     roles = [];
-    createRole(ASSASSIN,        'Assassin',     [3, 6]);
-    createRole(BLADEMASTER,     'Blademaster',  [3, 6]);
-    createRole(BRAWLER,         'Brawler',      [2, 4]);
-    createRole(ELEMENTALIST,    'Elementalist', [3]);
-    createRole(GUARDIAN,        'Guardian',     [2]);
-    createRole(GUNSLINGER,      'Gunslinger',   [2, 4]);
-    createRole(KNIGHT,          'Knight',       [2, 4, 6]);
-    createRole(RANGER,          'Ranger',       [2, 4]);
-    createRole(SHAPESHIFTER,    'Shapeshifter', [3]);
-    createRole(SORCERER,        'Sorcerer',     [3, 6]);
+    createRole(images.assassin,     ASSASSIN,        'Assassin',     [3, 6]);
+    createRole(images.blademaster,  BLADEMASTER,     'Blademaster',  [3, 6]);
+    createRole(images.brawler,      BRAWLER,         'Brawler',      [2, 4]);
+    createRole(images.elementalist, ELEMENTALIST,    'Elementalist', [3]);
+    createRole(images.guardian,     GUARDIAN,        'Guardian',     [2]);
+    createRole(images.gunslinger,   GUNSLINGER,      'Gunslinger',   [2, 4]);
+    createRole(images.knight,       KNIGHT,          'Knight',       [2, 4, 6]);
+    createRole(images.ranger,       RANGER,          'Ranger',       [2, 4]);
+    createRole(images.shapeshifter, SHAPESHIFTER,    'Shapeshifter', [3]);
+    createRole(images.sorcerer,     SORCERER,        'Sorcerer',     [3, 6]);
 };
 
 const createChampions = () => {
     championId = 0;
     champions = [];
-    createChampion(1, 'Darius',         IMPERIAL,           KNIGHT);
-    createChampion(1, 'Fiora',          NOBLE,              BLADEMASTER);
-    createChampion(1, 'Garen',          NOBLE,              KNIGHT);
-    createChampion(1, 'Graves',         PIRATE,             GUNSLINGER);
-    createChampion(1, 'Kassadin',       VOID,               SORCERER);
-    createChampion(1, 'Kha\'zix',       VOID,               ASSASSIN);
-    createChampion(1, 'Mordekaiser',    PHANTOM,            KNIGHT);
-    createChampion(1, 'Nidalee',        WILD,               SHAPESHIFTER);
-    createChampion(1, 'Tristana',       YORDLE,             GUNSLINGER);
-    createChampion(1, 'Vayne',          NOBLE,              RANGER);
-    createChampion(1, 'Warwick',        WILD,               BRAWLER);
-    createChampion(2, 'Ahri',           WILD,               SORCERER);
-    createChampion(2, 'Blitzcrank',     ROBOT,              BRAWLER);
-    createChampion(2, 'Braum',          GLACIAL,            GUARDIAN);
-    createChampion(2, 'Elise',          DEMON,              SHAPESHIFTER);
-    createChampion(2, 'Lissandra',      GLACIAL,            ELEMENTALIST);
-    createChampion(2, 'Lucian',         NOBLE,              GUNSLINGER);
-    createChampion(2, 'Lulu',           YORDLE,             SORCERER);
-    createChampion(2, 'Pyke',           PIRATE,             ASSASSIN);
-    createChampion(2, 'Rek\'sai',       VOID,               BRAWLER);
-    createChampion(2, 'Shen',           NINJA,              BLADEMASTER);
-    createChampion(2, 'Varus',          DEMON,              RANGER);
-    createChampion(2, 'Zed',            NINJA,              ASSASSIN);
-    createChampion(3, 'Aatrox',         DEMON,              BLADEMASTER);
-    createChampion(3, 'Ashe',           GLACIAL,            RANGER);
-    createChampion(3, 'Evelynn',        DEMON,              ASSASSIN);
-    createChampion(3, 'Gangplank',      PIRATE,             [BLADEMASTER, GUNSLINGER]);
-    createChampion(3, 'Katarina',       IMPERIAL,           ASSASSIN);
-    createChampion(3, 'Kennen',         [NINJA, YORDLE],    ELEMENTALIST);
-    createChampion(3, 'Morgana',        DEMON,              SORCERER);
-    createChampion(3, 'Poppy',          YORDLE,             KNIGHT);
-    createChampion(3, 'Rengar',         WILD,               ASSASSIN);
-    createChampion(3, 'Shyvana',        DRAGON,             SHAPESHIFTER);
-    createChampion(3, 'Veigar',         YORDLE,             SORCERER);
-    createChampion(3, 'Volibear',       GLACIAL,            BRAWLER);
-    createChampion(4, 'Akali',          NINJA,              ASSASSIN);
-    createChampion(4, 'Aurelion Sol',   DRAGON,             SORCERER);
-    createChampion(4, 'Brand',          DEMON,              ELEMENTALIST);
-    createChampion(4, 'Cho\'gath',      VOID,               BRAWLER);
-    createChampion(4, 'Draven',         IMPERIAL,           BLADEMASTER);
-    createChampion(4, 'Gnar',           [WILD, YORDLE],     SHAPESHIFTER);
-    createChampion(4, 'Kindred',        [WILD, PHANTOM],    RANGER);
-    createChampion(4, 'Leona',          NOBLE,              GUARDIAN);
-    createChampion(4, 'Sejuani',        GLACIAL,            KNIGHT);
-    createChampion(5, 'Anivia',         GLACIAL,            ELEMENTALIST);
-    createChampion(5, 'Karthus',        PHANTOM,            SORCERER);
-    createChampion(5, 'Kayle',          NOBLE,              KNIGHT);
-    createChampion(5, 'Miss Fortune',   PIRATE,             GUNSLINGER);
-    createChampion(5, 'Swain',          [IMPERIAL, DEMON],  SHAPESHIFTER);
-    createChampion(5, 'Yasuo',          EXILE,              BLADEMASTER);
+    createChampion(images.darius,       1, 'Darius',         IMPERIAL,           KNIGHT);
+    createChampion(images.fiora,        1, 'Fiora',          NOBLE,              BLADEMASTER);
+    createChampion(images.garen,        1, 'Garen',          NOBLE,              KNIGHT);
+    createChampion(images.graves,       1, 'Graves',         PIRATE,             [GUNSLINGER, BLADEMASTER]);
+    createChampion(images.kassadin,     1, 'Kassadin',       VOID,               SORCERER);
+    createChampion(images.khazix,       1, 'Kha\'zix',       VOID,               ASSASSIN);
+    createChampion(images.mordekaiser,  1, 'Mordekaiser',    PHANTOM,            KNIGHT);
+    createChampion(images.nidalee,      1, 'Nidalee',        WILD,               SHAPESHIFTER);
+    createChampion(images.tristana,     1, 'Tristana',       YORDLE,             GUNSLINGER);
+    createChampion(images.vayne,        1, 'Vayne',          NOBLE,              RANGER);
+    createChampion(images.warwick,      1, 'Warwick',        WILD,               BRAWLER);
+    createChampion(images.ahri,         2, 'Ahri',           WILD,               SORCERER);
+    createChampion(images.blitzcrank,   2, 'Blitzcrank',     ROBOT,              BRAWLER);
+    createChampion(images.braum,        2, 'Braum',          GLACIAL,            GUARDIAN);
+    createChampion(images.elise,        2, 'Elise',          DEMON,              SHAPESHIFTER);
+    createChampion(images.lissandra,    2, 'Lissandra',      GLACIAL,            ELEMENTALIST);
+    createChampion(images.lucian,       2, 'Lucian',         NOBLE,              GUNSLINGER);
+    createChampion(images.lulu,         2, 'Lulu',           YORDLE,             SORCERER);
+    createChampion(images.pyke,         2, 'Pyke',           PIRATE,             ASSASSIN);
+    createChampion(images.reksai,       2, 'Rek\'sai',       VOID,               BRAWLER);
+    createChampion(images.shen,         2, 'Shen',           NINJA,              BLADEMASTER);
+    createChampion(images.varus,        2, 'Varus',          DEMON,              RANGER);
+    createChampion(images.zed,          2, 'Zed',            NINJA,              ASSASSIN);
+    createChampion(images.aatrox,       3, 'Aatrox',         DEMON,              BLADEMASTER);
+    createChampion(images.ashe,         3, 'Ashe',           GLACIAL,            RANGER);
+    createChampion(images.evelynn,      3, 'Evelynn',        DEMON,              ASSASSIN);
+    createChampion(images.gangplank,    3, 'Gangplank',      PIRATE,             [BLADEMASTER, GUNSLINGER]);
+    createChampion(images.katarina,     3, 'Katarina',       IMPERIAL,           ASSASSIN);
+    createChampion(images.kennen,       3, 'Kennen',         [NINJA, YORDLE],    ELEMENTALIST);
+    createChampion(images.morgana,      3, 'Morgana',        DEMON,              SORCERER);
+    createChampion(images.poppy,        3, 'Poppy',          YORDLE,             KNIGHT);
+    createChampion(images.rengar,       3, 'Rengar',         WILD,               ASSASSIN);
+    createChampion(images.shyvana,      3, 'Shyvana',        DRAGON,             SHAPESHIFTER);
+    createChampion(images.veigar,       3, 'Veigar',         YORDLE,             SORCERER);
+    createChampion(images.volibear,     3, 'Volibear',       GLACIAL,            BRAWLER);
+    createChampion(images.akali,        4, 'Akali',          NINJA,              ASSASSIN);
+    createChampion(images.aurelionSol,  4, 'Aurelion Sol',   DRAGON,             SORCERER);
+    createChampion(images.brand,        4, 'Brand',          DEMON,              ELEMENTALIST);
+    createChampion(images.chogath,      4, 'Cho\'gath',      VOID,               BRAWLER);
+    createChampion(images.draven,       4, 'Draven',         IMPERIAL,           BLADEMASTER);
+    createChampion(images.gnar,         4, 'Gnar',           [WILD, YORDLE],     SHAPESHIFTER);
+    createChampion(images.kindred,      4, 'Kindred',        [WILD, PHANTOM],    RANGER);
+    createChampion(images.leona,        4, 'Leona',          NOBLE,              GUARDIAN);
+    createChampion(images.sejuani,      4, 'Sejuani',        GLACIAL,            KNIGHT);
+    createChampion(images.anivia,       5, 'Anivia',         GLACIAL,            ELEMENTALIST);
+    createChampion(images.karthus,      5, 'Karthus',        PHANTOM,            SORCERER);
+    createChampion(images.kayle,        5, 'Kayle',          NOBLE,              KNIGHT);
+    createChampion(images.missFortune,  5, 'Miss Fortune',   PIRATE,             GUNSLINGER);
+    createChampion(images.swain,        5, 'Swain',          [IMPERIAL, DEMON],  SHAPESHIFTER);
+    createChampion(images.yasuo,        5, 'Yasuo',          EXILE,              BLADEMASTER);
 };
 
 export const setup = () => {

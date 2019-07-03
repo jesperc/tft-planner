@@ -1,5 +1,6 @@
 export default class Champion {
     constructor(champion) {
+        this.image = champion.image;
         this.id = champion.id;
         this.name = champion.name;
         this.origins = champion.origins;

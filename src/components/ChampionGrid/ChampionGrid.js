@@ -1,8 +1,11 @@
 import React from 'react';
 import Champion from '../Champion/Champion';
 import './ChampionGrid.css';
+import { getOrigins, getRoles } from '../../misc/setup';
 
 let list = [];
+let origins = [];
+let roles = [];
 let func = undefined;
 
 const c = (name) => {
@@ -17,10 +20,20 @@ const c = (name) => {
     );
 };
 
+const i = (name) => {
+    const item = 
+           roles.find(x => x.name.toLowerCase() === name.toLowerCase())
+        || origins.find(x => x.name.toLowerCase() === name.toLowerCase());
+
+    return (
+        <img src={item.image} alt='item' />
+    )
+};
+
 const demons = () => {
     return (
         <tr>
-            <td>demon</td>
+            <td>{i('demon')}</td>
             <td>{c('evelynn')}</td>
             <td>{c('aatrox')}</td>
             <td></td>
@@ -28,7 +41,7 @@ const demons = () => {
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
+            <td>{c('varus')}</td>
             <td>{c('elise')}{c('swain')}</td>
             <td>{c('morgana')}</td>
         </tr>
@@ -38,7 +51,7 @@ const demons = () => {
 const dragons = () => {
     return (
         <tr>
-            <td>dragon</td>
+            <td>{i('dragon')}</td>
             <td></td>
             <td></td>
             <td></td>
@@ -56,7 +69,7 @@ const dragons = () => {
 const exiles = () => {
     return (
         <tr>
-            <td>exile</td>
+            <td>{i('exile')}</td>
             <td></td>
             <td>{c('yasuo')}</td>
             <td></td>
@@ -74,7 +87,7 @@ const exiles = () => {
 const glacials = () => {
     return (
         <tr>
-            <td>glacial</td>
+            <td>{i('glacial')}</td>
             <td></td>
             <td></td>
             <td>{c('volibear')}</td>
@@ -92,7 +105,7 @@ const glacials = () => {
 const robots = () => {
     return (
         <tr>
-            <td>robot</td>
+            <td>{i('robot')}</td>
             <td></td>
             <td></td>
             <td>{c('blitzcrank')}</td>
@@ -110,7 +123,7 @@ const robots = () => {
 const imperials = () => {
     return (
         <tr>
-            <td>imperial</td>
+            <td>{i('imperial')}</td>
             <td>{c('katarina')}</td>
             <td>{c('draven')}</td>
             <td></td>
@@ -128,13 +141,13 @@ const imperials = () => {
 const nobles = () => {
     return (
         <tr>
-            <td>noble</td>
+            <td>{i('noble')}</td>
             <td></td>
             <td>{c('fiora')}</td>
             <td></td>
-            <td>{c('lucian')}</td>
-            <td>{c('leona')}</td>
             <td></td>
+            <td>{c('leona')}</td>
+            <td>{c('lucian')}</td>
             <td>{c('garen')}{c('kayle')}</td>
             <td>{c('vayne')}</td>
             <td></td>
@@ -146,7 +159,7 @@ const nobles = () => {
 const ninjas = () => {
     return (
         <tr>
-            <td>ninja</td>
+            <td>{i('ninja')}</td>
             <td>{c('akali')}{c('zed')}</td>
             <td>{c('shen')}</td>
             <td></td>
@@ -164,7 +177,7 @@ const ninjas = () => {
 const phantoms = () => {
     return (
         <tr>
-            <td>phantom</td>
+            <td>{i('phantom')}</td>
             <td></td>
             <td></td>
             <td></td>
@@ -182,7 +195,7 @@ const phantoms = () => {
 const pirates = () => {
     return (
         <tr>
-            <td>pirate</td>
+            <td>{i('phantom')}</td>
             <td>{c('pyke')}</td>
             <td>{c('gangplank')}</td>
             <td></td>
@@ -200,7 +213,7 @@ const pirates = () => {
 const voids = () => {
     return (
         <tr>
-            <td>void</td>
+            <td>{i('void')}</td>
             <td>{c('kha\'zix')}</td>
             <td></td>
             <td>{c('cho\'gath')}{c('rek\'sai')}</td>
@@ -218,7 +231,7 @@ const voids = () => {
 const wilds = () => {
     return (
         <tr>
-            <td>wild</td>
+            <td>{i('wild')}</td>
             <td>{c('rengar')}</td>
             <td></td>
             <td>{c('warwick')}</td>
@@ -236,7 +249,7 @@ const wilds = () => {
 const yordles = () => {
     return (
         <tr>
-            <td>yordle</td>
+            <td>{i('yordle')}</td>
             <td></td>
             <td></td>
             <td></td>
@@ -252,24 +265,27 @@ const yordles = () => {
 };
 
 export const ChampionGrid = ({champions, onClick}) => {
+    origins = getOrigins();
+    roles = getRoles();
     list = champions;
     func = onClick;
+
     return (
         <div className='champions'>
             <table>
                 <tbody>
                     <tr>
                         <th></th>
-                        <th>assassin</th>
-                        <th>blademaster</th>
-                        <th>brawler</th>
-                        <th>elementalist</th>
-                        <th>guardian</th>
-                        <th>gunslinger</th>
-                        <th>knight</th>
-                        <th>ranger</th>
-                        <th>shapeshifter</th>
-                        <th>sorcerer</th>
+                        <th>{i('assassin')}</th>
+                        <th>{i('blademaster')}</th>
+                        <th>{i('brawler')}</th>
+                        <th>{i('elementalist')}</th>
+                        <th>{i('guardian')}</th>
+                        <th>{i('gunslinger')}</th>
+                        <th>{i('knight')}</th>
+                        <th>{i('ranger')}</th>
+                        <th>{i('shapeshifter')}</th>
+                        <th>{i('sorcerer')}</th>
                     </tr>
                     {demons()}
                     {dragons()}
