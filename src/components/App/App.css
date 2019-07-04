@@ -44,17 +44,12 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 .status-content {
 	position: absolute;
 }
 
 .selected-content {
 	position: absolute;
-	top: 240px;
+	top: 188px;
 	left: 260px;
 }

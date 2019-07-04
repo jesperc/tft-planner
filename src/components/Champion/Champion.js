@@ -13,7 +13,10 @@ const tierToColor = (tier) => {
 export const Champion = ({champion, selected, onClick, markAsSelected}) => {
     const style = { 
         border: `1px solid ${tierToColor(champion.tier)}`,
-        margin: '6px',
+        marginBottom: '3px',
+        marginTop: '6px',
+        marginLeft: '6px',
+        marginRight: '6px'
     };
     if (markAsSelected) {
         style.filter = 'grayscale(100%)';

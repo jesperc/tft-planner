@@ -25,8 +25,11 @@ const i = (name) => {
            roles.find(x => x.name.toLowerCase() === name.toLowerCase())
         || origins.find(x => x.name.toLowerCase() === name.toLowerCase());
 
+    const style = {
+        padding: '4px'
+    };
     return (
-        <img src={item.image} alt='item' />
+        <img width='24px' style={style} src={item.image} alt='item' />
     )
 };
 
@@ -195,7 +198,7 @@ const phantoms = () => {
 const pirates = () => {
     return (
         <tr>
-            <td>{i('phantom')}</td>
+            <td>{i('pirate')}</td>
             <td>{c('pyke')}</td>
             <td>{c('gangplank')}</td>
             <td></td>
