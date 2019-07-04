@@ -91,7 +91,7 @@ const createChampions = () => {
     createChampion(images.darius,       1, 'Darius',         IMPERIAL,           KNIGHT);
     createChampion(images.fiora,        1, 'Fiora',          NOBLE,              BLADEMASTER);
     createChampion(images.garen,        1, 'Garen',          NOBLE,              KNIGHT);
-    createChampion(images.graves,       1, 'Graves',         PIRATE,             [GUNSLINGER, BLADEMASTER]);
+    createChampion(images.graves,       1, 'Graves',         PIRATE,             GUNSLINGER);
     createChampion(images.kassadin,     1, 'Kassadin',       VOID,               SORCERER);
     createChampion(images.khazix,       1, 'Kha\'zix',       VOID,               ASSASSIN);
     createChampion(images.mordekaiser,  1, 'Mordekaiser',    PHANTOM,            KNIGHT);
