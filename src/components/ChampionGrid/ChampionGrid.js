@@ -1,17 +1,19 @@
 import React from 'react';
 import Champion from '../Champion/Champion';
 import './ChampionGrid.css';
-import { getOrigins, getRoles } from '../../misc/setup';
+import { getOrigins, getRoles, getChampions, getRow } from '../../misc/setup';
 
 let list = [];
 let origins = [];
 let roles = [];
-let func = undefined;
+let allChampions = [];
+let func;
 
-const c = (name) => {
+const createChampion = (name) => {
     const champion = list.find(x => x.champion.name.toLowerCase() === name.toLowerCase())
     return (
         <Champion 
+            key={`champion${champion.champion.id}`}
             champion={champion.champion}
             selected={champion.selected}
             onClick={func}
@@ -20,256 +22,60 @@ const c = (name) => {
     );
 };
 
-const i = (name) => {
+const createIcon = (name) => {
     const item = 
-           roles.find(x => x.name.toLowerCase() === name.toLowerCase())
+             roles.find(x => x.name.toLowerCase() === name.toLowerCase())
         || origins.find(x => x.name.toLowerCase() === name.toLowerCase());
 
-    const style = {
-        padding: '4px'
-    };
     return (
-        <img width='24px' style={style} src={item.image} alt='item' />
+        <img width='24px' style={{ padding: '4px' }} src={item.image} alt='item' />
     )
 };
 
-const demons = () => {
-    return (
-        <tr>
-            <td>{i('demon')}</td>
-            <td>{c('evelynn')}</td>
-            <td>{c('aatrox')}</td>
-            <td></td>
-            <td>{c('brand')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{c('varus')}</td>
-            <td>{c('elise')}{c('swain')}</td>
-            <td>{c('morgana')}</td>
-        </tr>
-    );
-};
+const createTr = (origin) => {
+    const row = getRow();
+    const list = new Array(row.length);
+    for (let i = 0; i < list.length; ++i) {
+        list[i] = [];
+    }
+    const champions = allChampions
+        .filter(x => x.origins.includes(origins.find(y => y.name.toLowerCase() === origin).id));
 
-const dragons = () => {
-    return (
-        <tr>
-            <td>{i('dragon')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{c('shyvana')}</td>
-            <td>{c('aurelion sol')}</td>
-        </tr>
-    );
-};
+    for (let champ of champions) {
+        const items = [];
+        for (let role of champ.roles) {
+            items.push({ 
+                id: row[role], 
+                name: champ.name 
+            });
+        }
+        for (let item of items) {
+            list[item.id].push(item.name);
+        }
+    }
 
-const exiles = () => {
-    return (
-        <tr>
-            <td>{i('exile')}</td>
-            <td></td>
-            <td>{c('yasuo')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    );
-};
+    const jsx = [];
+    let index = 0;
+    for (let item of list) {
+        const championJsx = [];
+        for (let champ of item) {
+            championJsx.push(createChampion(champ));
+        }
+        jsx.push(<td key={`jsx${index++}`}>{championJsx}</td>);
+    }
 
-const glacials = () => {
     return (
         <tr>
-            <td>{i('glacial')}</td>
-            <td></td>
-            <td></td>
-            <td>{c('volibear')}</td>
-            <td>{c('lissandra')}{c('anivia')}</td>
-            <td>{c('braum')}</td>
-            <td></td>
-            <td>{c('sejuani')}</td>
-            <td>{c('ashe')}</td>
-            <td></td>
-            <td></td>
+            <td>{createIcon(origin)}</td>
+            {jsx}
         </tr>
     );
-};
-
-const robots = () => {
-    return (
-        <tr>
-            <td>{i('robot')}</td>
-            <td></td>
-            <td></td>
-            <td>{c('blitzcrank')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    );
-};
-
-const imperials = () => {
-    return (
-        <tr>
-            <td>{i('imperial')}</td>
-            <td>{c('katarina')}</td>
-            <td>{c('draven')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{c('darius')}</td>
-            <td></td>
-            <td>{c('swain')}</td>
-            <td></td>
-        </tr>
-    );
-};
-
-const nobles = () => {
-    return (
-        <tr>
-            <td>{i('noble')}</td>
-            <td></td>
-            <td>{c('fiora')}</td>
-            <td></td>
-            <td></td>
-            <td>{c('leona')}</td>
-            <td>{c('lucian')}</td>
-            <td>{c('garen')}{c('kayle')}</td>
-            <td>{c('vayne')}</td>
-            <td></td>
-            <td></td>
-        </tr>
-    );
-};
-
-const ninjas = () => {
-    return (
-        <tr>
-            <td>{i('ninja')}</td>
-            <td>{c('akali')}{c('zed')}</td>
-            <td>{c('shen')}</td>
-            <td></td>
-            <td>{c('kennen')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    );
-};
-
-const phantoms = () => {
-    return (
-        <tr>
-            <td>{i('phantom')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{c('mordekaiser')}</td>
-            <td>{c('kindred')}</td>
-            <td></td>
-            <td></td>
-        </tr>
-    );
-};
-
-const pirates = () => {
-    return (
-        <tr>
-            <td>{i('pirate')}</td>
-            <td>{c('pyke')}</td>
-            <td>{c('gangplank')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{c('gangplank')}{c('graves')}{c('miss fortune')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    );
-};
-
-const voids = () => {
-    return (
-        <tr>
-            <td>{i('void')}</td>
-            <td>{c('kha\'zix')}</td>
-            <td></td>
-            <td>{c('cho\'gath')}{c('rek\'sai')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{c('kassadin')}</td>
-        </tr>
-    );
-};
-
-const wilds = () => {
-    return (
-        <tr>
-            <td>{i('wild')}</td>
-            <td>{c('rengar')}</td>
-            <td></td>
-            <td>{c('warwick')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{c('gnar')}{c('nidalee')}</td>
-            <td>{c('ahri')}</td>
-        </tr>
-    );
-};
-
-const yordles = () => {
-    return (
-        <tr>
-            <td>{i('yordle')}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{c('kennen')}</td>
-            <td></td>
-            <td>{c('tristana')}</td>
-            <td>{c('poppy')}</td>
-            <td></td>
-            <td>{c('gnar')}</td>
-            <td>{c('lulu')}{c('veigar')}</td>
-        </tr>
-    );
-};
+}
 
 export const ChampionGrid = ({champions, onClick}) => {
     origins = getOrigins();
     roles = getRoles();
+    allChampions = getChampions();
     list = champions;
     func = onClick;
 
@@ -279,30 +85,30 @@ export const ChampionGrid = ({champions, onClick}) => {
                 <tbody>
                     <tr>
                         <th></th>
-                        <th>{i('assassin')}</th>
-                        <th>{i('blademaster')}</th>
-                        <th>{i('brawler')}</th>
-                        <th>{i('elementalist')}</th>
-                        <th>{i('guardian')}</th>
-                        <th>{i('gunslinger')}</th>
-                        <th>{i('knight')}</th>
-                        <th>{i('ranger')}</th>
-                        <th>{i('shapeshifter')}</th>
-                        <th>{i('sorcerer')}</th>
+                        <th>{createIcon('assassin')}</th>
+                        <th>{createIcon('blademaster')}</th>
+                        <th>{createIcon('brawler')}</th>
+                        <th>{createIcon('elementalist')}</th>
+                        <th>{createIcon('guardian')}</th>
+                        <th>{createIcon('gunslinger')}</th>
+                        <th>{createIcon('knight')}</th>
+                        <th>{createIcon('ranger')}</th>
+                        <th>{createIcon('shapeshifter')}</th>
+                        <th>{createIcon('sorcerer')}</th>
                     </tr>
-                    {demons()}
-                    {dragons()}
-                    {exiles()}
-                    {glacials()}
-                    {robots()}
-                    {imperials()}
-                    {nobles()}
-                    {ninjas()}
-                    {phantoms()}
-                    {pirates()}
-                    {voids()}
-                    {wilds()}
-                    {yordles()}
+                    {createTr('demon')}
+                    {createTr('dragon')}
+                    {createTr('exile')}
+                    {createTr('glacial')}
+                    {createTr('robot')}
+                    {createTr('imperial')}
+                    {createTr('noble')}
+                    {createTr('ninja')}
+                    {createTr('phantom')}
+                    {createTr('pirate')}
+                    {createTr('void')}
+                    {createTr('wild')}
+                    {createTr('yordle')}
                 </tbody>
             </table>
         </div>
@@ -310,20 +116,3 @@ export const ChampionGrid = ({champions, onClick}) => {
 };
 
 export default ChampionGrid;
-
-/*
-<td></td>
-                    <td>demon</td>
-                    <td>dragon</td>
-                    <td>exile</td>
-                    <td>glacial</td>
-                    <td>robot</td>
-                    <td>imperial</td>
-                    <td>noble</td>
-                    <td>ninja</td>
-                    <td>phantom</td>
-                    <td>pirate</td>
-                    <td>void</td>
-                    <td>wild</td>
-                    <td>yordle</td>
-*/

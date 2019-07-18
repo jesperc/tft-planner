@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import queryString from 'query-string';
 import './App.css';
-import { setup, getChampions, getRoles, getOrigins } from '../../misc/setup';
+import { setup, getChampions, getRoles, getOrigins, getItems } from '../../misc/setup';
 import Status from '../Status/Status';
 import ChampionGrid from '../ChampionGrid/ChampionGrid';
 import Champion from '../Champion/Champion';
@@ -12,12 +13,29 @@ export default class App extends Component {
         setup();
         this.roles = getRoles();
         this.origins = getOrigins();
-        this.state = {
-            champions: getChampions().map(champion => ({ 
-                champion, 
-                selected: false 
-            }))
-        };
+        this.champions = getChampions();
+        this.items = getItems();
+        const champions = this.champions.map(champion => ({ 
+            champion, 
+            selected: false 
+        }));
+
+        if (window.location.search.length > 0) {
+            const params = queryString.parse(window.location.search); 
+            const names = params[Object.keys(params)[0]].split(',').map(n => n.toLowerCase());
+            const paramChampions =  this.champions
+                .filter(c => names.includes(c.name.toLowerCase()))
+                .map(c => c.name.toLowerCase());
+            const paramItems =  this.items.filter(i => names.includes(i.name.toLowerCase()));
+            for (let champ of champions) {
+                if (paramChampions.includes(champ.champion.name.toLowerCase())) {
+                    champ.selected = true;
+                }
+            }
+            console.log(paramChampions);
+        }
+
+        this.state = { champions, link: this.getLink(champions) };
     }
 
     onClick = (id, selected) => {
@@ -27,7 +45,11 @@ export default class App extends Component {
                 c.selected = !selected;
             }
         });
-        this.setState({ champions });
+        const link = this.getLink(champions);
+        if (link.indexOf('?') > 0) {
+            window.history.replaceState({}, '', link.substr(link.indexOf('?'), link.length));
+        }
+        this.setState({ champions, link });
     }
 
     onReset = () => {
@@ -36,26 +58,53 @@ export default class App extends Component {
         this.setState({ champions });
     }
 
+    getLink = (list) => {
+        const champions = list
+            .filter(c => c.selected)
+            .map(c => c.champion.name.toLowerCase())
+            .join(',');
+        return `${process.env.REACT_APP_HOST}${champions.length > 0 ? `?names=${champions}` : ''}`;
+    }
+
     render() {
         if (this.state == null) {
             return <div>Loading...</div>;
+        }
+        const buttonStyle = {
+            position: 'absolute', 
+            top: '179px', 
+            left: '296px', 
+            cursor: 'pointer'
         }
 
         return (
             <div>
                 {this.renderStatus()}
                 {this.renderSelectedChampions()}
-                <button style={{position: 'absolute', top: '184px', left: '296px', cursor: 'pointer'}} onClick={() => this.onReset()}>Reset</button>
-                <ChampionGrid champions={this.state.champions} onClick={this.onClick} />
+                <button 
+                    style={buttonStyle} 
+                    onClick={() => this.onReset()}
+                >
+                    Reset
+                </button>
+                
+                <ChampionGrid 
+                    champions={this.state.champions} 
+                    onClick={this.onClick} 
+                />
             </div>
         )
     }
 
     renderSelectedChampions() {
         const champions = this.state.champions.filter(c => c.selected === true);
+        const pStyle = {
+            color: 'white', 
+            marginLeft: '6px'
+        };
         return (
             <div className='selected-content'>
-                <p style={{color: 'white', marginLeft: '6px'}}>{`${champions.length}/9`}</p>
+                <p style={pStyle}>{`${champions.length}/9`}</p>
                 {champions.map(x => 
                     <Champion 
                         key={`sc${x.champion.id}`} 

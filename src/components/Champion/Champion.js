@@ -18,6 +18,7 @@ export const Champion = ({champion, selected, onClick, markAsSelected}) => {
         marginLeft: '6px',
         marginRight: '6px'
     };
+    
     if (markAsSelected) {
         style.filter = 'grayscale(100%)';
         style.opacity = '0.6';

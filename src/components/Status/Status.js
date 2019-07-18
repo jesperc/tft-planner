@@ -1,19 +1,27 @@
 import React from 'react';
 import * as filters from '../../misc/filters';
 import * as colors from '../../misc/colors';
-import './Status.css';
 
 export const Status = ({count, name, item, color}) => {
-    const { interval } = item;
-    const style = { color: 'red' };
-    const textStyle = { fontSize: '14px' };
+    const { interval, image } = item;
+    
+    const imageStyle = { 
+        color: 'red',
+        transform: 'translateY(6px)'
+    };
+    const textStyle = { 
+        fontSize: '14px',
+        color: 'white',
+        margin: '10px'
+    };
+
     if (color === 'grey') {
-        style.border = `1px solid grey`;
-        style.opacity = '0.3';
+        imageStyle.border = `1px solid grey`;
+        imageStyle.opacity = '0.3';
         textStyle.opacity = '0.5';
     } else {
-        style.border = `1px solid ${color}`;
-        style.filter = color === colors.bronze 
+        imageStyle.border = `1px solid ${color}`;
+        imageStyle.filter = color === colors.bronze 
             ? filters.bronze
             : color === colors.silver 
                 ? filters.silver
@@ -21,10 +29,20 @@ export const Status = ({count, name, item, color}) => {
     }
 
     return (
-        <li className='status-li'>
+        <li>
             <p>
-                <img width='20px' className='status-image' alt='status' style={style} src={item.image} />
-                <span style={textStyle} className='status-text'>{`${count} ${name} (${interval.join(', ')})`}</span>
+                <img 
+                    width='20px' 
+                    alt='status' 
+                    style={imageStyle} 
+                    src={image}
+                />
+                <span 
+                    style={textStyle} 
+                    className='status-text'
+                >
+                    {`${count} ${name} (${interval.join(', ')})`}
+                </span>
             </p>
         </li>
     );

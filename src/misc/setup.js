@@ -1,6 +1,7 @@
 import Origin from '../models/origin';
 import Role from '../models/role';
 import Champion from '../models/champion';
+import Item from '../models/item';
 import * as images from './images'; 
 
 const DEMON = 0;
@@ -27,9 +28,22 @@ const KNIGHT = 6;
 const RANGER = 7;
 const SHAPESHIFTER = 8;
 const SORCERER = 9;
+const ROLE_COUNT = 10;
+
+const BF_SWORD = 0;
+const CHAIN_VEST = 1;    
+const GIANTS_BELT = 2;   
+const LARGE_ROD = 3;     
+const NEGATRON_CLOAK = 4;
+const RECURVE_BOW = 5;   
+const SPATULA = 6;      
+const TEAR = 7;         
+
+const row = [...Array(ROLE_COUNT).keys()];
 
 let origins = [];
 let roles = [];
+let items = [];
 let champions = [];
 let championId = 0;
 
@@ -39,6 +53,10 @@ const createOrigin = (image, id, name, color, interval) => {
 
 const createRole = (image, id, name, interval) => {
     roles.push(new Role({image, id, name, interval}));
+};
+
+const createItem = (image, id, name) => {
+    items.push(new Item({image, id, name}));
 };
 
 const createChampion = (image, tier, name, origin, role) => {
@@ -85,6 +103,18 @@ const createRoles = () => {
     createRole(images.sorcerer,     SORCERER,        'Sorcerer',     [3, 6]);
 };
 
+const createItems = () => {
+    items = [];
+    createItem(images.bfSword,       BF_SWORD, 'BF Sword');
+    createItem(images.recurveBow,    RECURVE_BOW, 'Recurve Bow');
+    createItem(images.chainVest,     CHAIN_VEST, 'Chain Vest');
+    createItem(images.negatronCloak, NEGATRON_CLOAK, 'Negatron Cloak');
+    createItem(images.tear,          TEAR, 'Tear');
+    createItem(images.giantsBelt,    GIANTS_BELT, 'Giants Belt');
+    createItem(images.spatula,       SPATULA, 'Spatula');
+    createItem(images.largeRod,      LARGE_ROD, 'Large Rod');
+};
+
 const createChampions = () => {
     championId = 0;
     champions = [];
@@ -100,6 +130,7 @@ const createChampions = () => {
     createChampion(images.vayne,        1, 'Vayne',          NOBLE,              RANGER);
     createChampion(images.warwick,      1, 'Warwick',        WILD,               BRAWLER);
     createChampion(images.ahri,         2, 'Ahri',           WILD,               SORCERER);
+    createChampion(images.twistedFate,  2, 'Twisted Fate',   PIRATE,             SORCERER);
     createChampion(images.blitzcrank,   2, 'Blitzcrank',     ROBOT,              BRAWLER);
     createChampion(images.braum,        2, 'Braum',          GLACIAL,            GUARDIAN);
     createChampion(images.elise,        2, 'Elise',          DEMON,              SHAPESHIFTER);
@@ -143,6 +174,7 @@ const createChampions = () => {
 export const setup = () => {
     createOrigins();
     createRoles();
+    createItems();
     createChampions();
 };
 
@@ -157,3 +189,11 @@ export const getChampions = () => {
 export const getRoles = () => {
     return roles.slice(0);
 };
+
+export const getItems = () => {
+    return items.slice(0);
+};
+
+export const getRow = () => {
+    return row.slice(0);
+}
