@@ -102,6 +102,7 @@ export const ChampionGrid = ({champions, onClick}) => {
                     {createTr('glacial')}
                     {createTr('robot')}
                     {createTr('imperial')}
+                    {createTr('hextech')}
                     {createTr('noble')}
                     {createTr('ninja')}
                     {createTr('phantom')}

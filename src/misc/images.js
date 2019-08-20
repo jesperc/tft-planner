@@ -48,6 +48,10 @@ import kayle         from '../resources/images/kayle.png';
 import missFortune   from '../resources/images/miss-fortune.png';
 import swain         from '../resources/images/swain.png';
 import yasuo         from '../resources/images/yasuo.png';
+import jinx          from '../resources/images/jinx.png';
+import jayce         from '../resources/images/jayce.png';
+import vi            from '../resources/images/vi.png';
+import camille       from '../resources/images/camille.png';
 import twistedFate   from '../resources/images/twisted-fate.png';
   
 import demon         from '../resources/images/demon.png';
@@ -63,6 +67,7 @@ import voidd         from '../resources/images/void.png';
 import wild          from '../resources/images/wild.png';
 import yordle        from '../resources/images/yordle.png';
 import glacial       from '../resources/images/glacial.png';
+import hextech       from '../resources/images/hextech.png';
 
 import assassin      from '../resources/images/assassin.png';
 import blademaster   from '../resources/images/blademaster.png';
@@ -135,6 +140,10 @@ export {
     missFortune,
     swain,     
     yasuo,
+    jayce,
+    camille,
+    vi,
+    jinx,
     twistedFate,
     demon,
     dragon,
@@ -156,6 +165,7 @@ export {
     guardian,
     gunslinger,
     knight,
+    hextech,
     ranger,
     shapeshifter,
     sorcerer,

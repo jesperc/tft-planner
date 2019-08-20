@@ -17,6 +17,7 @@ const WILD = 9;
 const YORDLE = 10;
 const PIRATE = 11;
 const GLACIAL = 12;
+const HEXTECH = 13;
 
 const ASSASSIN = 0;
 const BLADEMASTER = 1;
@@ -87,37 +88,39 @@ const createOrigins = () => {
     createOrigin(images.wild,       WILD,      'Wild',     'rgb(255, 0, 0)', [2, 4]);
     createOrigin(images.yordle,     YORDLE,    'Yordle',   'rgb(255, 0, 0)', [3, 6]);
     createOrigin(images.glacial,    GLACIAL,   'Glacial',  'rgb(255, 0, 0)', [2, 4, 6]);
+    createOrigin(images.hextech,    HEXTECH,   'Hextech',  'rgb(255, 0, 0)', [2, 4]);
 };
 
 const createRoles = () => {
     roles = [];
     createRole(images.assassin,     ASSASSIN,        'Assassin',     [3, 6]);
-    createRole(images.blademaster,  BLADEMASTER,     'Blademaster',  [3, 6]);
-    createRole(images.brawler,      BRAWLER,         'Brawler',      [2, 4]);
+    createRole(images.blademaster,  BLADEMASTER,     'Blademaster',  [3, 6, 9]);
+    createRole(images.brawler,      BRAWLER,         'Brawler',      [2, 4, 6]);
     createRole(images.elementalist, ELEMENTALIST,    'Elementalist', [3]);
     createRole(images.guardian,     GUARDIAN,        'Guardian',     [2]);
-    createRole(images.gunslinger,   GUNSLINGER,      'Gunslinger',   [2, 4]);
+    createRole(images.gunslinger,   GUNSLINGER,      'Gunslinger',   [2, 4, 6]);
     createRole(images.knight,       KNIGHT,          'Knight',       [2, 4, 6]);
     createRole(images.ranger,       RANGER,          'Ranger',       [2, 4]);
-    createRole(images.shapeshifter, SHAPESHIFTER,    'Shapeshifter', [3]);
+    createRole(images.shapeshifter, SHAPESHIFTER,    'Shapeshifter', [3, 6]);
     createRole(images.sorcerer,     SORCERER,        'Sorcerer',     [3, 6]);
 };
 
 const createItems = () => {
     items = [];
-    createItem(images.bfSword,       BF_SWORD, 'BF Sword');
-    createItem(images.recurveBow,    RECURVE_BOW, 'Recurve Bow');
-    createItem(images.chainVest,     CHAIN_VEST, 'Chain Vest');
-    createItem(images.negatronCloak, NEGATRON_CLOAK, 'Negatron Cloak');
-    createItem(images.tear,          TEAR, 'Tear');
-    createItem(images.giantsBelt,    GIANTS_BELT, 'Giants Belt');
-    createItem(images.spatula,       SPATULA, 'Spatula');
-    createItem(images.largeRod,      LARGE_ROD, 'Large Rod');
+    createItem(images.bfSword,       BF_SWORD,          'BF Sword');
+    createItem(images.recurveBow,    RECURVE_BOW,       'Recurve Bow');
+    createItem(images.chainVest,     CHAIN_VEST,        'Chain Vest');
+    createItem(images.negatronCloak, NEGATRON_CLOAK,    'Negatron Cloak');
+    createItem(images.tear,          TEAR,              'Tear');
+    createItem(images.giantsBelt,    GIANTS_BELT,       'Giants Belt');
+    createItem(images.spatula,       SPATULA,           'Spatula');
+    createItem(images.largeRod,      LARGE_ROD,         'Large Rod');
 };
 
 const createChampions = () => {
     championId = 0;
     champions = [];
+    createChampion(images.camille,      1, 'Camille',        HEXTECH,            BLADEMASTER);
     createChampion(images.darius,       1, 'Darius',         IMPERIAL,           KNIGHT);
     createChampion(images.fiora,        1, 'Fiora',          NOBLE,              BLADEMASTER);
     createChampion(images.garen,        1, 'Garen',          NOBLE,              KNIGHT);
@@ -134,6 +137,7 @@ const createChampions = () => {
     createChampion(images.blitzcrank,   2, 'Blitzcrank',     ROBOT,              BRAWLER);
     createChampion(images.braum,        2, 'Braum',          GLACIAL,            GUARDIAN);
     createChampion(images.elise,        2, 'Elise',          DEMON,              SHAPESHIFTER);
+    createChampion(images.jayce,        2, 'Jayce',          HEXTECH,            SHAPESHIFTER);
     createChampion(images.lissandra,    2, 'Lissandra',      GLACIAL,            ELEMENTALIST);
     createChampion(images.lucian,       2, 'Lucian',         NOBLE,              GUNSLINGER);
     createChampion(images.lulu,         2, 'Lulu',           YORDLE,             SORCERER);
@@ -153,6 +157,7 @@ const createChampions = () => {
     createChampion(images.rengar,       3, 'Rengar',         WILD,               ASSASSIN);
     createChampion(images.shyvana,      3, 'Shyvana',        DRAGON,             SHAPESHIFTER);
     createChampion(images.veigar,       3, 'Veigar',         YORDLE,             SORCERER);
+    createChampion(images.vi,           3, 'Vi',             HEXTECH,            BRAWLER);
     createChampion(images.volibear,     3, 'Volibear',       GLACIAL,            BRAWLER);
     createChampion(images.akali,        4, 'Akali',          NINJA,              ASSASSIN);
     createChampion(images.aurelionSol,  4, 'Aurelion Sol',   DRAGON,             SORCERER);
@@ -160,7 +165,8 @@ const createChampions = () => {
     createChampion(images.chogath,      4, 'Cho\'gath',      VOID,               BRAWLER);
     createChampion(images.draven,       4, 'Draven',         IMPERIAL,           BLADEMASTER);
     createChampion(images.gnar,         4, 'Gnar',           [WILD, YORDLE],     SHAPESHIFTER);
-    createChampion(images.kindred,      4, 'Kindred',        [WILD, PHANTOM],    RANGER);
+    createChampion(images.jinx,         4, 'Jinx',           [HEXTECH],          GUNSLINGER);
+    createChampion(images.kindred,      4, 'Kindred',        PHANTOM,            RANGER);
     createChampion(images.leona,        4, 'Leona',          NOBLE,              GUARDIAN);
     createChampion(images.sejuani,      4, 'Sejuani',        GLACIAL,            KNIGHT);
     createChampion(images.anivia,       5, 'Anivia',         GLACIAL,            ELEMENTALIST);

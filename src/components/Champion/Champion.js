@@ -11,12 +11,13 @@ const tierToColor = (tier) => {
 }
 
 export const Champion = ({champion, selected, onClick, markAsSelected}) => {
+    const margin = 2;
     const style = { 
         border: `1px solid ${tierToColor(champion.tier)}`,
-        marginBottom: '3px',
-        marginTop: '6px',
-        marginLeft: '6px',
-        marginRight: '6px'
+        marginBottom: `${margin}px`,
+        marginTop: `${margin * 2}px`,
+        marginLeft: `${margin * 2}px`,
+        marginRight: `${margin * 2}px`
     };
     
     if (markAsSelected) {
