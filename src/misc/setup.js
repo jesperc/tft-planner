@@ -93,7 +93,7 @@ const createOrigins = () => {
 
 const createRoles = () => {
     roles = [];
-    createRole(images.assassin,     ASSASSIN,        'Assassin',     [3, 6]);
+    createRole(images.assassin,     ASSASSIN,        'Assassin',     [3, 6, 9]);
     createRole(images.blademaster,  BLADEMASTER,     'Blademaster',  [3, 6, 9]);
     createRole(images.brawler,      BRAWLER,         'Brawler',      [2, 4, 6]);
     createRole(images.elementalist, ELEMENTALIST,    'Elementalist', [3]);
