@@ -53,6 +53,8 @@ import jayce         from '../resources/images/jayce.png';
 import vi            from '../resources/images/vi.png';
 import camille       from '../resources/images/camille.png';
 import twistedFate   from '../resources/images/twisted-fate.png';
+import pantheon      from '../resources/images/pantheon.png';
+import kaisa         from '../resources/images/kaisa.png';
   
 import demon         from '../resources/images/demon.png';
 import dragon        from '../resources/images/dragon.png';
@@ -145,6 +147,8 @@ export {
     vi,
     jinx,
     twistedFate,
+    pantheon,
+    kaisa,
     demon,
     dragon,
     exile, 

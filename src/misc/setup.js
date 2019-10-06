@@ -170,9 +170,11 @@ const createChampions = () => {
     createChampion(images.leona,        4, 'Leona',          NOBLE,              GUARDIAN);
     createChampion(images.sejuani,      4, 'Sejuani',        GLACIAL,            KNIGHT);
     createChampion(images.anivia,       5, 'Anivia',         GLACIAL,            ELEMENTALIST);
+    createChampion(images.kaisa ,       5, 'Kai\'sa',        VOID,               [ASSASSIN, RANGER]);
     createChampion(images.karthus,      5, 'Karthus',        PHANTOM,            SORCERER);
     createChampion(images.kayle,        5, 'Kayle',          NOBLE,              KNIGHT);
     createChampion(images.missFortune,  5, 'Miss Fortune',   PIRATE,             GUNSLINGER);
+    createChampion(images.pantheon   ,  5, 'Pantheon',       DRAGON,             GUARDIAN);
     createChampion(images.swain,        5, 'Swain',          [IMPERIAL, DEMON],  SHAPESHIFTER);
     createChampion(images.yasuo,        5, 'Yasuo',          EXILE,              BLADEMASTER);
 };
