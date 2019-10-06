@@ -84,9 +84,9 @@ const createOrigins = () => {
     createOrigin(images.phantom,    PHANTOM,   'Phantom',  'rgb(255, 0, 0)', [2]);
     createOrigin(images.pirate,     PIRATE,    'Pirate',   'rgb(255, 0, 0)', [3]);
     createOrigin(images.robot,      ROBOT,     'Robot',    'rgb(255, 0, 0)', [1]);
-    createOrigin(images.voidd,      VOID,      'Void',     'rgb(255, 0, 0)', [3]);
+    createOrigin(images.voidd,      VOID,      'Void',     'rgb(255, 0, 0)', [2, 4]);
     createOrigin(images.wild,       WILD,      'Wild',     'rgb(255, 0, 0)', [2, 4]);
-    createOrigin(images.yordle,     YORDLE,    'Yordle',   'rgb(255, 0, 0)', [3, 6]);
+    createOrigin(images.yordle,     YORDLE,    'Yordle',   'rgb(255, 0, 0)', [3, 6, 9]);
     createOrigin(images.glacial,    GLACIAL,   'Glacial',  'rgb(255, 0, 0)', [2, 4, 6]);
     createOrigin(images.hextech,    HEXTECH,   'Hextech',  'rgb(255, 0, 0)', [2, 4]);
 };
