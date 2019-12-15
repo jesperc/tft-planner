@@ -3,6 +3,7 @@ export const tier2  = '#156831';
 export const tier3  = '#12407C';
 export const tier4  = '#893088';
 export const tier5  = '#B89D27';
+export const tier7  = '#AAA9AD';
 export const grey   = '#808080';
 export const gold   = '#FFD700';
 export const silver = '#808080';

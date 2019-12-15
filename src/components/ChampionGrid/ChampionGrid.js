@@ -85,31 +85,33 @@ export const ChampionGrid = ({champions, onClick}) => {
                 <tbody>
                     <tr>
                         <th></th>
+                        <th>{createIcon('alchemist')}</th>
                         <th>{createIcon('assassin')}</th>
+                        <th>{createIcon('avatar')}</th>
+                        <th>{createIcon('berserker')}</th>
                         <th>{createIcon('blademaster')}</th>
-                        <th>{createIcon('brawler')}</th>
-                        <th>{createIcon('elementalist')}</th>
-                        <th>{createIcon('guardian')}</th>
-                        <th>{createIcon('gunslinger')}</th>
-                        <th>{createIcon('knight')}</th>
+                        <th>{createIcon('druid')}</th>
+                        <th>{createIcon('mage')}</th>
+                        <th>{createIcon('mystic')}</th>
+                        <th>{createIcon('predator')}</th>
                         <th>{createIcon('ranger')}</th>
-                        <th>{createIcon('shapeshifter')}</th>
-                        <th>{createIcon('sorcerer')}</th>
+                        <th>{createIcon('soulbound')}</th>
+                        <th>{createIcon('summoner')}</th>
+                        <th>{createIcon('warden')}</th>
                     </tr>
-                    {createTr('demon')}
-                    {createTr('dragon')}
-                    {createTr('exile')}
+                    {createTr('cloud')}
+                    {createTr('crystal')}
+                    {createTr('desert')}
+                    {createTr('electric')}
                     {createTr('glacial')}
-                    {createTr('robot')}
-                    {createTr('imperial')}
-                    {createTr('hextech')}
-                    {createTr('noble')}
-                    {createTr('ninja')}
-                    {createTr('phantom')}
-                    {createTr('pirate')}
-                    {createTr('void')}
-                    {createTr('wild')}
-                    {createTr('yordle')}
+                    {createTr('inferno')}
+                    {createTr('light')}
+                    {createTr('mountain')}
+                    {createTr('ocean')}
+                    {createTr('poison')}
+                    {createTr('shadow')}
+                    {createTr('steel')}
+                    {createTr('woodland')}
                 </tbody>
             </table>
         </div>
