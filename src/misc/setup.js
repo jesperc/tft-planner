@@ -87,7 +87,7 @@ const createOrigins = () => {
     createOrigin(images.mountain, MOUNTAIN, 'Mountain', 'rgb(255, 0, 0)', [2]);
     createOrigin(images.ocean, OCEAN, 'Ocean', 'rgb(255, 0, 0)', [2, 4, 6]);
     createOrigin(images.poison, POISON, 'Poison', 'rgb(255, 0, 0)', [3]);
-    createOrigin(images.shadow, SHADOW, 'Shadow', 'rgb(255, 0, 0)', [2, 4]);
+    createOrigin(images.shadow, SHADOW, 'Shadow', 'rgb(255, 0, 0)', [3, 6]);
     createOrigin(images.steel, STEEL, 'Steel', 'rgb(255, 0, 0)', [2, 3, 4]);
     createOrigin(images.woodland, WOODLAND, 'Woodland', 'rgb(255, 0, 0)', [3]);
 };
