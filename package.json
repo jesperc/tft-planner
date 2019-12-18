@@ -9,9 +9,14 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
+  "devDependencies": {
+    "ssh2": "^0.8.7"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "release": "npm run build && npm run transfer",
+    "transfer": "node src/publish.js"
   },
   "eslintConfig": {
     "extends": "react-app"
