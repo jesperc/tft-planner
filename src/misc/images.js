@@ -90,6 +90,9 @@ import yasuo from '../resources/images/yasuo.png';
 import yorick from '../resources/images/Yorick.png';
 import zed from '../resources/images/zed.png';
 import zyra from '../resources/images/Zyra.png';
+import leona from '../resources/images/leona.png';
+import karma from '../resources/images/karma.png';
+import lunar from '../resources/images/lunar.png';
 
 export {
     aatrox,
@@ -183,5 +186,8 @@ export {
     yasuo,
     yorick,
     zed,
-    zyra
+    zyra,
+    leona,
+    karma,
+    lunar
 }

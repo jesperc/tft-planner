@@ -78,7 +78,7 @@ export default class App extends Component {
         }
 
         return (
-            <div>
+            <div style={{zoom: window.innerWidth <= 500 ? '150%' : '100%'}}>
                 {this.renderStatus()}
                 {this.renderSelectedChampions()}
                 <button 

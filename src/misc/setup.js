@@ -17,6 +17,7 @@ const POISON = 9;
 const SHADOW = 10;
 const STEEL = 11;
 const WOODLAND = 12;
+const LUNAR = 13;
 
 const ALCHEMIST = 0;
 const ASSASSIN = 1;
@@ -90,6 +91,7 @@ const createOrigins = () => {
     createOrigin(images.shadow, SHADOW, 'Shadow', 'rgb(255, 0, 0)', [3, 6]);
     createOrigin(images.steel, STEEL, 'Steel', 'rgb(255, 0, 0)', [2, 3, 4]);
     createOrigin(images.woodland, WOODLAND, 'Woodland', 'rgb(255, 0, 0)', [3]);
+    createOrigin(images.lunar, LUNAR, 'Lunar', 'rgb(255, 0, 0)', [2]);
 };
 
 const createRoles = () => {
@@ -127,6 +129,7 @@ const createChampions = () => {
     createChampion(images.diana, 1, 'Diana', INFERNO, ASSASSIN);
     createChampion(images.ivern, 1, 'Ivern', WOODLAND, DRUID);
     createChampion(images.kogMaw, 1, 'Kogmaw', POISON, PREDATOR);
+    createChampion(images.leona, 1, 'Leona', LUNAR, WARDEN);
     createChampion(images.maokai, 1, 'Maokai', WOODLAND, DRUID);
     createChampion(images.nasus, 1, 'Nasus', LIGHT, WARDEN);
     createChampion(images.ornn, 1, 'Ornn', ELECTRIC, WARDEN);
@@ -153,6 +156,7 @@ const createChampions = () => {
     createChampion(images.azir, 3, 'Azir', DESERT, SUMMONER);
     createChampion(images.drMundo, 3, 'DrMundo', POISON, BERSERKER);
     createChampion(images.ezreal, 3, 'Ezreal', GLACIAL, RANGER);
+    createChampion(images.karma, 3, 'Karma', LUNAR, MYSTIC);
     createChampion(images.kindred, 3, 'Kindred', [SHADOW, INFERNO], RANGER);
     createChampion(images.nautilus, 3, 'Nautilus', OCEAN, WARDEN);
     createChampion(images.nocturne, 3, 'Nocturne', STEEL, ASSASSIN);

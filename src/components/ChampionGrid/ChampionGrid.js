@@ -32,7 +32,7 @@ const createIcon = (name) => {
     )
 };
 
-const createTr = (origin) => {
+const createTrDesktop = (origin) => {
     const row = getRow();
     const list = new Array(row.length);
     for (let i = 0; i < list.length; ++i) {
@@ -72,6 +72,107 @@ const createTr = (origin) => {
     );
 }
 
+
+const createTrMobile = (origin) => {
+    const row = getRow();
+    const list = new Array(row.length);
+    for (let i = 0; i < list.length; ++i) {
+        list[i] = [];
+    }
+    const champions = allChampions
+        .filter(x => x.origins.includes(origins.find(y => y.name.toLowerCase() === origin).id));
+    console.log(champions);
+
+    for (let champ of champions) {
+        const items = [];
+        for (let role of champ.roles) {
+            items.push({ 
+                id: row[role], 
+                name: champ.name 
+            });
+        }
+        for (let item of items) {
+            list[item.id].push(item.name);
+        }
+    }
+
+    const jsx = [];
+    let index = 0;
+    for (let item of list) {
+        for (let champ of item) {
+            jsx.push(<td key={`jsx${index++}`}>{createChampion(champ)}</td>);
+        }
+    }
+
+    return (
+        <tr>
+            <td>{createIcon(origin)}</td>
+            {jsx}
+        </tr>
+    );
+}
+
+const classesList = [
+    "assassin",
+    "alchemist",
+    "avatar",
+    "berserker",
+    "blademaster",
+    "druid",
+    "mage",
+    "mystic",
+    "predator",
+    "ranger",
+    "soulbound",
+    "summoner",
+    "warden",
+];
+
+const originsList = [
+    "cloud",
+    "crystal",
+    "desert",
+    "electric",
+    "glacial",
+    "lunar",
+    "inferno",
+    "light",
+    "mountain",
+    "ocean",
+    "poison",
+    "shadow",
+    "steel",
+    "woodland",
+];
+
+const renderDesktop = () => {
+    return (
+        <div className='champions'>
+            <table>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        {classesList.map((item) => <th>{createIcon(item)}</th>)}
+                    </tr>
+                    {originsList.map((item) => createTrDesktop(item))}
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
+const renderMobile = () => {
+    return (
+        <div className='champions'>
+            <table>
+                <tbody>
+                    {originsList.map((item) => createTrMobile(item))}
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
 export const ChampionGrid = ({champions, onClick}) => {
     origins = getOrigins();
     roles = getRoles();
@@ -79,43 +180,10 @@ export const ChampionGrid = ({champions, onClick}) => {
     list = champions;
     func = onClick;
 
-    return (
-        <div className='champions'>
-            <table>
-                <tbody>
-                    <tr>
-                        <th></th>
-                        <th>{createIcon('alchemist')}</th>
-                        <th>{createIcon('assassin')}</th>
-                        <th>{createIcon('avatar')}</th>
-                        <th>{createIcon('berserker')}</th>
-                        <th>{createIcon('blademaster')}</th>
-                        <th>{createIcon('druid')}</th>
-                        <th>{createIcon('mage')}</th>
-                        <th>{createIcon('mystic')}</th>
-                        <th>{createIcon('predator')}</th>
-                        <th>{createIcon('ranger')}</th>
-                        <th>{createIcon('soulbound')}</th>
-                        <th>{createIcon('summoner')}</th>
-                        <th>{createIcon('warden')}</th>
-                    </tr>
-                    {createTr('cloud')}
-                    {createTr('crystal')}
-                    {createTr('desert')}
-                    {createTr('electric')}
-                    {createTr('glacial')}
-                    {createTr('inferno')}
-                    {createTr('light')}
-                    {createTr('mountain')}
-                    {createTr('ocean')}
-                    {createTr('poison')}
-                    {createTr('shadow')}
-                    {createTr('steel')}
-                    {createTr('woodland')}
-                </tbody>
-            </table>
-        </div>
-    );
+    const isDesktop = window.innerWidth > 500;
+    return isDesktop 
+        ? renderDesktop()
+        : renderMobile();
 };
 
 export default ChampionGrid;
