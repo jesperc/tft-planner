@@ -1,0 +1,4 @@
+node_modules
+src/db/seed/addChampions.ts
+src/db/seed/addRoles.ts
+src/db/seed/addOrigins.ts

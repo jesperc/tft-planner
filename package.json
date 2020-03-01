@@ -1,23 +1,40 @@
 {
-  "name": "tft-planner",
+  "name": "my-innovation-project",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
-    "dotenv": "^8.0.0",
-    "query-string": "^6.8.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "chance": "^1.1.4",
+    "jest": "24.9.0",
+    "node-sass": "^4.13.1",
+    "query-string": "^6.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.1",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
-    "ssh2": "^0.8.7"
+    "@types/jest": "^25.1.1",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "jest-transform-stub": "^2.0.0",
+    "prettier": "^1.19.1",
+    "ssh2": "^0.8.8",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "release": "npm run build && npm run transfer",
-    "transfer": "node src/publish.js"
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "pretty": "prettier --write --tab-width 4 \"src/**/*.js\"",
+    "prepushtest": "jest",
+    "format": "prettier \"./src/**/*.+(js|jsx|css|less|scss|ts|tsx|md)\" --write",
+    "transfer": "node publish.js"
   },
+  "pre-push": [
+    "prepushtest"
+  ],
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -31,6 +48,16 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-transform-typescript",
+        {
+          "allowNamespaces": true
+        }
+      ]
     ]
   }
 }

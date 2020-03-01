@@ -1,0 +1,22 @@
+.selected-champions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+  font-size: 18px;
+}
+
+.selected-champions-icon {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.selected-champions-button {
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+.selected-champions-last-li {
+  transform: translateY(12px);
+}
