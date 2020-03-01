@@ -1,11 +1,11 @@
 import React from 'react'
 import ChampionIcon from '../champion-icon'
-import SelectedChampions from '../selected-champion-row/SelectedChampions'
 import { Role } from '../../models/role'
 import { Origin, OriginType } from '../../models/origin'
 import { Champion } from '../../models/champion'
 import Icon from '../icon/Icon'
 import './ChampionGrid.scss'
+import SelectedChampions from '../selected-champions/SelectedChampions'
 
 export interface ChampionGridViewProps {
   roles: Role[]
