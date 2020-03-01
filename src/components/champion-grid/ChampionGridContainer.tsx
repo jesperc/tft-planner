@@ -28,7 +28,7 @@ const ChampionGridContainer: React.FC<ChampionGridContainerProps> = () => {
   }
 
   const clearUrl = () => {
-    window.history.replaceState({}, '', '/')
+    window.history.replaceState({}, '', process.env.REACT_APP_RESET_ROUTE || '/')
   }
 
   const getUrl = (selected: string[]) => {
