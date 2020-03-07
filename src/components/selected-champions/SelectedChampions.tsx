@@ -9,42 +9,23 @@ export interface SelectedChampionsProps {
   onClear: Function
 }
 
-const chunkSize = 4
+const chunkSize = 100
 
 const SelectedChampions: React.FC<SelectedChampionsProps> = ({ selectedIds, onClick, onClear }) => {
-  const splitToChunks = (array: string[], chunkSize: number): string[][] => {
-    const result: string[][] = []
-    let chunk: string[] = []
-    array.forEach((item, index) => {
-      if (index % chunkSize === 0 && index !== 0) {
-        result.push([...chunk])
-        chunk = []
-      }
-      chunk.push(item)
-    })
-    if (chunk.length > 0) {
-      result.push(chunk)
-    }
-    return result
-  }
-
-  const chunks = splitToChunks(selectedIds, chunkSize)
   return (
     <div className="selected-champions">
-      {chunks.map((chunk, index) => (
-        <ul key={`chunk-${index}`}>
-          {chunk.map(id => (
-            <li key={`selected-${id}`}>
-              <ChampionIcon
-                className="selected-champions-icon"
-                id={id}
-                selected={false}
-                onClick={onClick}
-              />
-            </li>
-          ))}
-        </ul>
-      ))}
+      <ul>
+        {selectedIds.map(id => (
+          <li key={`selected-${id}`}>
+            <ChampionIcon
+              className="selected-champions-icon"
+              id={id}
+              selected={false}
+              onClick={onClick}
+            />
+          </li>
+        ))}
+      </ul>
       {selectedIds.length > 0 && (
         <>
           <p className="selected-champions-text">
