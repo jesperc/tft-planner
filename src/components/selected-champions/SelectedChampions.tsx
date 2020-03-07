@@ -36,11 +36,6 @@ const SelectedChampions: React.FC<SelectedChampionsProps> = ({ selectedIds, onCl
           </p>
         </>
       )}
-      {/* {selectedIds.length > 0 && (
-        <button className="selected-champions-button" onClick={() => onClear()}>
-          Clear
-        </button>
-      )} */}
       {selectedIds.length > 0 && <StatusBlock selectedIds={selectedIds} />}
     </div>
   )
