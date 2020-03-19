@@ -8,6 +8,7 @@ export interface StatusTextContainerProps {
   displayName: string
   image: string
   buffs: Buff[]
+  tooltip: string
 }
 
 const StatusTextContainer: React.FC<StatusTextContainerProps> = ({
@@ -15,6 +16,7 @@ const StatusTextContainer: React.FC<StatusTextContainerProps> = ({
   displayName,
   image,
   buffs,
+  tooltip = '',
 }) => {
   const bestBuffType = Buff.getBestType(count, buffs)
   const filter = getBuffFilterColor(bestBuffType)
@@ -41,6 +43,7 @@ const StatusTextContainer: React.FC<StatusTextContainerProps> = ({
       count={count}
       displayName={displayName}
       buffs={buffString}
+      tooltip={tooltip}
     />
   )
 }

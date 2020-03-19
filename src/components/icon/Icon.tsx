@@ -6,10 +6,21 @@ export interface IconProps {
   alt?: string
   className?: string
   style?: any
+  tooltip?: string
 }
 
-const Icon: React.FC<IconProps> = ({ image, className, alt = 'alt', style = {} }) => {
-  return <img style={style} alt={alt} className={`icon ${className || ''}`} src={image}></img>
+const Icon: React.FC<IconProps> = ({ image, className, alt = 'alt', style = {}, tooltip = '' }) => {
+  return (
+    <>
+      <img
+        style={style}
+        alt={alt}
+        className={`icon ${className || ''}`}
+        data-tip={tooltip}
+        src={image}
+      ></img>
+    </>
+  )
 }
 
 export default Icon

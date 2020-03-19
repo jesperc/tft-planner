@@ -21,3 +21,4 @@ yarn-error.log*
 /src/publish.js
 
 publish.js
+codeSnippet.js

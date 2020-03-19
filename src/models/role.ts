@@ -1,36 +1,36 @@
 import Buff from './buff'
 
 export enum RoleType {
-  alchemist,
-  assassin,
-  avatar,
-  berserker,
   blademaster,
-  druid,
-  mage,
+  blaster,
+  brawler,
+  demolitionist,
+  infiltrator,
+  manaReaver,
+  mercenary,
   mystic,
-  predator,
-  ranger,
-  soulbound,
-  summoner,
-  warden,
+  protector,
+  sniper,
+  sorcerer,
+  starship,
+  vanguard,
   __length,
 }
 
 const roleTypeToStringLut: Map<RoleType, string> = new Map([
-  [RoleType.alchemist, 'Alchemist'],
-  [RoleType.assassin, 'Assassin'],
-  [RoleType.avatar, 'Avatar'],
-  [RoleType.berserker, 'Berserker'],
   [RoleType.blademaster, 'Blademaster'],
-  [RoleType.druid, 'Druid'],
-  [RoleType.mage, 'Mage'],
+  [RoleType.blaster, 'Blaster'],
+  [RoleType.brawler, 'Brawler'],
+  [RoleType.demolitionist, 'Demolitionist'],
+  [RoleType.infiltrator, 'Infiltrator'],
+  [RoleType.manaReaver, 'Mana-Reaver'],
+  [RoleType.mercenary, 'Mercenary'],
   [RoleType.mystic, 'Mystic'],
-  [RoleType.predator, 'Predator'],
-  [RoleType.ranger, 'Ranger'],
-  [RoleType.soulbound, 'Soulbound'],
-  [RoleType.summoner, 'Summoner'],
-  [RoleType.warden, 'Warden'],
+  [RoleType.protector, 'Protector'],
+  [RoleType.sniper, 'Sniper'],
+  [RoleType.sorcerer, 'Sorcerer'],
+  [RoleType.starship, 'Starship'],
+  [RoleType.vanguard, 'Vanguard'],
 ])
 
 export const roleTypeToString = (roleType: RoleType): string => {
@@ -47,4 +47,5 @@ export type Role = {
   displayName: string
   type: RoleType
   buffs: Buff[]
+  description: string
 }

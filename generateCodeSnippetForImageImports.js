@@ -3,7 +3,7 @@ const fs = require('fs')
 const filenames = fs.readdirSync('src/resources/images/')
 
 let importString = ''
-let exportString = 'export {\n'
+let exportString = 'export default {\n'
 
 filenames.forEach(filename => {
   const name = filename
@@ -11,7 +11,7 @@ filenames.forEach(filename => {
     .slice(0, -1)
     .join('.')
   const key = name.charAt(0).toLowerCase() + name.slice(1)
-  importString += `import ${key} from '../resources/images/${filename}';\n`
+  importString += `import ${key} from '../../resources/images/${filename}';\n`
   exportString += `${key},\n`
 })
 

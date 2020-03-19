@@ -7,7 +7,6 @@ export enum ChampionTier {
   Three,
   Four,
   Five,
-  Seven,
   __length,
 }
 

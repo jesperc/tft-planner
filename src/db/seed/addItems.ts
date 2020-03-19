@@ -31,7 +31,7 @@ const addItems = (items: Item[]) => {
   addItem(ItemType.botrk, images.botrk)
   addItem(ItemType.brambleVest, images.brambleVest)
   addItem(ItemType.deathblade, images.deathblade)
-  addItem(ItemType.dragonsClaw, images.dragonClaw)
+  addItem(ItemType.dragonsClaw, images.dragonsClaw)
   addItem(ItemType.bloodthirster, images.bloodThirster)
   addItem(ItemType.forceOfNature, images.forceOfNature)
   addItem(ItemType.frozenHeart, images.frozenHeart)

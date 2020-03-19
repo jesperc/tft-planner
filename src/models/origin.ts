@@ -1,38 +1,30 @@
 import Buff from './buff'
 
 export enum OriginType {
-  cloud,
-  crystal,
-  desert,
-  electric,
-  glacial,
-  inferno,
-  light,
-  mountain,
-  ocean,
-  poison,
-  shadow,
-  steel,
-  woodland,
-  lunar,
+  celestial,
+  chrono,
+  cybernetic,
+  darkStar,
+  mechPilot,
+  rebel,
+  spacePirate,
+  starGuardian,
+  valkyrie,
+  void,
   __length,
 }
 
 const originTypeToStringLut: Map<OriginType, string> = new Map([
-  [OriginType.cloud, 'Cloud'],
-  [OriginType.crystal, 'Crystal'],
-  [OriginType.desert, 'Desert'],
-  [OriginType.electric, 'Electric'],
-  [OriginType.glacial, 'Glacial'],
-  [OriginType.inferno, 'Inferno'],
-  [OriginType.light, 'Light'],
-  [OriginType.mountain, 'Mountain'],
-  [OriginType.ocean, 'Ocean'],
-  [OriginType.poison, 'Poison'],
-  [OriginType.shadow, 'Shadow'],
-  [OriginType.steel, 'Steel'],
-  [OriginType.woodland, 'Woodland'],
-  [OriginType.lunar, 'Lunar'],
+  [OriginType.celestial, 'Celestial'],
+  [OriginType.chrono, 'Chrono'],
+  [OriginType.cybernetic, 'Cybernetic'],
+  [OriginType.darkStar, 'Dark Star'],
+  [OriginType.mechPilot, 'Mech Pilot'],
+  [OriginType.rebel, 'Rebel'],
+  [OriginType.spacePirate, 'Space Pirate'],
+  [OriginType.starGuardian, 'Star Guardian'],
+  [OriginType.valkyrie, 'Valkyrie'],
+  [OriginType.void, 'Void'],
 ])
 
 export const originTypeToString = (type: OriginType): string => {
@@ -49,4 +41,5 @@ export type Origin = {
   displayName: string
   type: OriginType
   buffs: Buff[]
+  description: string
 }

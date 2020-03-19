@@ -31,7 +31,6 @@ const championTierColors: Map<ChampionTier, string> = new Map<ChampionTier, stri
   [ChampionTier.Three, '#12407C'],
   [ChampionTier.Four, '#893088'],
   [ChampionTier.Five, '#B89D27'],
-  [ChampionTier.Seven, '#AAA9AD'],
 ])
 
 const buffBorderColors: Map<BuffType, string> = new Map([

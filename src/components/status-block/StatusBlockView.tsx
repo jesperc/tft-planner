@@ -13,6 +13,7 @@ export type Status = {
   image: string
   displayName: string
   buffs: Buff[]
+  tooltip: string
 }
 
 const StatusBlockView: React.FC<StatusBlockViewProps> = ({ statuses }) => {
@@ -25,6 +26,7 @@ const StatusBlockView: React.FC<StatusBlockViewProps> = ({ statuses }) => {
           image={status.image}
           displayName={status.displayName}
           buffs={status.buffs}
+          tooltip={status.tooltip}
         />
       ))}
     </div>

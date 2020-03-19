@@ -8,6 +8,7 @@ export interface StatusTextViewProps {
   displayName: string
   image: string
   buffs: string
+  tooltip: string
 }
 
 const StatusTextView: React.FC<StatusTextViewProps> = ({
@@ -17,9 +18,10 @@ const StatusTextView: React.FC<StatusTextViewProps> = ({
   displayName,
   image,
   buffs,
+  tooltip,
 }) => {
   return (
-    <p className="status-text" style={style}>
+    <p className="status-text" style={style} data-tip={tooltip}>
       <img className="status-text-image" style={imageStyle} alt="status" src={image} />
       <span>{`${count} ${displayName} (${buffs})`}</span>
     </p>

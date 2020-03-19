@@ -7,6 +7,7 @@ export interface ChampionIconViewProps {
   image: string
   className?: string
   selected: boolean
+  tooltip?: string
   onClick: Function
 }
 
@@ -17,15 +18,18 @@ const ChampionIconView: React.FC<ChampionIconViewProps> = ({
   className,
   onClick,
   selected,
+  tooltip = '',
 }) => {
   return (
-    <img
-      alt="champion"
-      className={`champion-icon ${className || ''} ${selected ? 'champion-icon-selected' : ''}`}
-      style={style}
-      src={image}
-      onClick={() => onClick(id)}
-    ></img>
+    <>
+      <img
+        alt="champion"
+        className={`champion-icon ${className || ''} ${selected ? 'champion-icon-selected' : ''}`}
+        style={style}
+        src={image}
+        onClick={() => onClick(id)}
+      ></img>
+    </>
   )
 }
 

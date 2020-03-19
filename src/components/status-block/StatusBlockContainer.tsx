@@ -46,6 +46,7 @@ const StatusBlockContainer: React.FC<StatusBlockProps> = ({ selectedIds }) => {
           image: role.role.image,
           buffs: role.role.buffs,
           displayName: role.role.displayName,
+          tooltip: role.role.description,
         } as Status),
     )
     .concat(
@@ -57,6 +58,7 @@ const StatusBlockContainer: React.FC<StatusBlockProps> = ({ selectedIds }) => {
             image: origin.origin.image,
             buffs: origin.origin.buffs,
             displayName: origin.origin.displayName,
+            tooltip: origin.origin.description,
           } as Status),
       ),
     )

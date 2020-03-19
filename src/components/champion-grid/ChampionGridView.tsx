@@ -19,7 +19,7 @@ export interface ChampionGridViewProps {
 const renderRoles = (roles: Role[]) => {
   return roles.map(role => (
     <th key={role.id}>
-      <Icon alt={role.displayName} image={role.image} />
+      <Icon alt={role.displayName} image={role.image} tooltip={role.description} />
     </th>
   ))
 }
@@ -34,7 +34,7 @@ const renderOriginsAndTheirChampions = (
   return origins.map(origin => (
     <tr key={origin.id}>
       <td>
-        <Icon alt={origin.displayName} image={origin.image} />
+        <Icon alt={origin.displayName} image={origin.image} tooltip={origin.description} />
       </td>
       {renderChampionIcons(champions, roles, selected, origin.type, onSelect)}
     </tr>
