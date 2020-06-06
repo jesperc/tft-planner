@@ -9,8 +9,6 @@ export interface SelectedChampionsProps {
   onClear: Function
 }
 
-const chunkSize = 100
-
 const SelectedChampions: React.FC<SelectedChampionsProps> = ({ selectedIds, onClick, onClear }) => {
   return (
     <div className="selected-champions">

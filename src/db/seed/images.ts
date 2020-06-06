@@ -231,6 +231,16 @@ import zephyr from '../../resources/images/zephyr.png'
 import ziggs from '../../resources/images/Ziggs.png'
 import zoe from '../../resources/images/Zoe.png'
 import zyra from '../../resources/images/Zyra.png'
+import illaoi from '../../resources/images/Illaoi.png'
+import urgot from '../../resources/images/Urgot.png'
+import riven from '../../resources/images/Riven.png'
+import bard from '../../resources/images/Bard.png'
+import teemo from '../../resources/images/Teemo.png'
+import viktor from '../../resources/images/Viktor.png'
+import cassiopeia from '../../resources/images/Cassiopeia.png'
+import astro from '../../resources/images/Astro.png'
+import battlecast from '../../resources/images/Battlecast.png'
+import paragon from '../../resources/images/Paragon.png'
 
 export default {
   aatrox,
@@ -466,4 +476,14 @@ export default {
   ziggs,
   zoe,
   zyra,
+  illaoi,
+  urgot,
+  riven,
+  bard,
+  teemo,
+  viktor,
+  cassiopeia,
+  astro,
+  battlecast,
+  paragon,
 }

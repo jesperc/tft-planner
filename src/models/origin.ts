@@ -9,8 +9,8 @@ export enum OriginType {
   rebel,
   spacePirate,
   starGuardian,
-  valkyrie,
-  void,
+  astro,
+  battlecast,
   __length,
 }
 
@@ -23,8 +23,8 @@ const originTypeToStringLut: Map<OriginType, string> = new Map([
   [OriginType.rebel, 'Rebel'],
   [OriginType.spacePirate, 'Space Pirate'],
   [OriginType.starGuardian, 'Star Guardian'],
-  [OriginType.valkyrie, 'Valkyrie'],
-  [OriginType.void, 'Void'],
+  [OriginType.astro, 'Astro'],
+  [OriginType.battlecast, 'Battlecast'],
 ])
 
 export const originTypeToString = (type: OriginType): string => {

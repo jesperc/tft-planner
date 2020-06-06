@@ -79,9 +79,8 @@ const addOrigins = (origins: Origin[]) => {
   <br/><br/>
   6
   60 Total Mana`)
-  addOrigin(OriginType.valkyrie, images.valkyrie, [2], `Valkyrie attacks and spells always critically strike targets below 50% health.`)
-  addOrigin(OriginType.void, images.void_, [3], `
-  Attacks and spells from Void Champions deal true damage.`)
+  addOrigin(OriginType.astro, images.astro, [3], `Astro champions have their mana cost reduced by 30.`)
+  addOrigin(OriginType.battlecast, images.battlecast, [2, 4, 6, 8], `Upon taking or dealing damage 10 times, Battlecast champions heal if below 50% hp or deal damage if above`)
 }
 
 export default addOrigins

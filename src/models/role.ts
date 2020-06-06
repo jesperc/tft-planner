@@ -14,6 +14,7 @@ export enum RoleType {
   sorcerer,
   starship,
   vanguard,
+  paragon,
   __length,
 }
 
@@ -31,6 +32,7 @@ const roleTypeToStringLut: Map<RoleType, string> = new Map([
   [RoleType.sorcerer, 'Sorcerer'],
   [RoleType.starship, 'Starship'],
   [RoleType.vanguard, 'Vanguard'],
+  [RoleType.paragon, 'Paragon'],
 ])
 
 export const roleTypeToString = (roleType: RoleType): string => {
