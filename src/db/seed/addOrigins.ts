@@ -33,7 +33,7 @@ const addOrigins = (origins: Origin[]) => {
   
   6
   60% Healing`)
-  addOrigin(OriginType.chrono, images.chrono, [2, 4, 6], `All allies gain Attack Speed every 4 seconds.
+  addOrigin(OriginType.chrono, images.chrono, [2, 4, 6, 8], `All allies gain Attack Speed every 4 seconds.
   <br/><br/>
   2
   10% Attack Speed
@@ -50,7 +50,7 @@ const addOrigins = (origins: Origin[]) => {
   <br/><br/>
   6
   800 Health & 80 Attack Damage`)
-  addOrigin(OriginType.darkStar, images.darkstar, [3, 6], `When a Dark Star Champion dies, it gives increased damage, plus any previous stacks of this effect, to the nearest ally Dark Star Champion.
+  addOrigin(OriginType.darkStar, images.darkstar, [2, 4, 6], `When a Dark Star Champion dies, it gives increased damage, plus any previous stacks of this effect, to the nearest ally Dark Star Champion.
   <br/><br/>
   3
   35% Damage Increase
@@ -72,7 +72,7 @@ const addOrigins = (origins: Origin[]) => {
   <br/><br/>
   4
   50% for 1 Gold and 15% for a component item`)
-  addOrigin(OriginType.starGuardian, images.starguardian, [3, 6], `Star Guardian's spellcasts grant Mana to other Star Guardians. (Spreads among them)
+  addOrigin(OriginType.starGuardian, images.starguardian, [3, 6, 9], `Star Guardian's spellcasts grant Mana to other Star Guardians. (Spreads among them)
   <br/><br/>
   3
   30 Total Mana

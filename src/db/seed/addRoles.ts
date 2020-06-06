@@ -75,7 +75,7 @@ const addRoles = (roles: Role[]) => {
   <br/><br/>
   4
   35% Maximum Health Shield`)
-  addRole(RoleType.sniper, images.sniper, [2], `Snipers deal 12% increased damage for each hex between themselves and their target.`)
+  addRole(RoleType.sniper, images.sniper, [2, 4], `Snipers deal 12% increased damage for each hex between themselves and their target.`)
   addRole(RoleType.sorcerer, images.sorcerer, [2, 4, 6], `All allies have increased Spell Power.
   <br/><br/>
   2
@@ -88,7 +88,7 @@ const addRoles = (roles: Role[]) => {
   80% Spell Power`)
   addRole(RoleType.starship, images.starship, [1], `Innate: Starships gain 20 mana per second, maneuver around the board, 
   <br/><br/>and are immune to movement impairing effects, but can't Basic Attack.`)
-  addRole(RoleType.vanguard, images.vanguard, [2, 4], `Vanguard champions gain bonus Armor.
+  addRole(RoleType.vanguard, images.vanguard, [2, 4, 6], `Vanguard champions gain bonus Armor.
   2
   60 Armor
   4
