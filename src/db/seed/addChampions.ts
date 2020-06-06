@@ -51,7 +51,7 @@ const addChampions = (champions: Champion[]) => {
   addChampion('Yasuo', ChampionTier.Two, images.yasuo, [OriginType.rebel], [RoleType.blademaster])
   addChampion('Kog\'Maw', ChampionTier.Two, images.kogMaw, [OriginType.battlecast], [RoleType.blaster])
   addChampion('Nautilus', ChampionTier.Two, images.nautilus, [OriginType.astro], [RoleType.vanguard])
-  addChampion('Zed', ChampionTier.Two, images.nautilus, [OriginType.rebel], [RoleType.infiltrator])
+  addChampion('Zed', ChampionTier.Two, images.zed, [OriginType.rebel], [RoleType.infiltrator])
 
   addChampion('Ashe', ChampionTier.Three, images.ashe, [OriginType.celestial], [RoleType.sniper])
   addChampion('Ezreal', ChampionTier.Three, images.ezreal, [OriginType.chrono], [RoleType.blaster])
