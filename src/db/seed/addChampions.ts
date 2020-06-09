@@ -78,7 +78,7 @@ const addChampions = (champions: Champion[]) => {
   addChampion('Soraka', ChampionTier.Four, images.soraka, [OriginType.starGuardian], [RoleType.mystic])
   //addChampion('Velkoz', ChampionTier.Four, images.velkoz, [OriginType.void], [RoleType.sorcerer])
   addChampion('Wukong', ChampionTier.Four, images.wukong, [OriginType.chrono], [RoleType.vanguard])
-  addChampion('Gnar', ChampionTier.Four, images.gnar, [OriginType.chrono], [RoleType.brawler])
+  addChampion('Gnar', ChampionTier.Four, images.gnar, [OriginType.astro], [RoleType.brawler])
   addChampion('Teemo', ChampionTier.Four, images.teemo, [OriginType.astro], [RoleType.sniper])
   addChampion('Viktor', ChampionTier.Four, images.viktor, [OriginType.battlecast], [RoleType.sorcerer])
   addChampion('Riven', ChampionTier.Four, images.riven, [OriginType.chrono], [RoleType.blademaster])
