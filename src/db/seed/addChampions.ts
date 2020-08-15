@@ -91,6 +91,7 @@ const addChampions = (champions: Champion[]) => {
   addChampion('Thresh', ChampionTier.Five, images.thresh, [OriginType.chrono], [RoleType.manaReaver])
   addChampion('Janna', ChampionTier.Five, images.janna, [OriginType.starGuardian], [RoleType.paragon])
   addChampion('Urgot', ChampionTier.Five, images.urgot, [OriginType.battlecast], [RoleType.protector])
+  addChampion('Xerath', ChampionTier.Five, images.xerath, [OriginType.darkStar], [RoleType.sorcerer])
 }
 
 export default addChampions

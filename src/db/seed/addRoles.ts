@@ -93,6 +93,7 @@ const addRoles = (roles: Role[]) => {
   60 Armor
   4
   250 Armor`)
+  addRole(RoleType.paragon, images.paragon, [1], '')
 }
 
 export default addRoles

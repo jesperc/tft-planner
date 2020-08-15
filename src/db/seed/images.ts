@@ -241,6 +241,7 @@ import cassiopeia from '../../resources/images/Cassiopeia.png'
 import astro from '../../resources/images/Astro.png'
 import battlecast from '../../resources/images/Battlecast.png'
 import paragon from '../../resources/images/Paragon.png'
+import xerath from '../../resources/images/Xerath.png'
 
 export default {
   aatrox,
@@ -486,4 +487,5 @@ export default {
   astro,
   battlecast,
   paragon,
+  xerath,
 }
