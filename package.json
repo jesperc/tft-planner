@@ -32,7 +32,7 @@
     "pretty": "prettier --write --tab-width 4 \"src/**/*.js\"",
     "prepushtest": "jest",
     "format": "prettier \"./src/**/*.+(js|jsx|css|less|scss|ts|tsx|md)\" --write",
-    "transfer": "npm run build && node publish.js"
+    "release": "npm run build && node publish.js"
   },
   "pre-push": [
     "prepushtest"
