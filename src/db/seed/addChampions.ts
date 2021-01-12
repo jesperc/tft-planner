@@ -30,7 +30,7 @@ const addChampions = (champions: Champion[]) => {
   addChampion('Maokai', ChampionTier.One, images.maokai, [OriginType.elderwood], [RoleType.brawler])
   addChampion('Nasus', ChampionTier.One, images.nami, [OriginType.divine], [RoleType.syphoner])
   addChampion('Nidalee', ChampionTier.One, images.nidalee, [OriginType.warlord], [RoleType.sharpshooter])
-  addChampion('Pyke', ChampionTier.One, images.pyke, [OriginType.cultist], [RoleType.assassin])
+  addChampion('Pyke', ChampionTier.One, images.pyke, [OriginType.cultist], [RoleType.assassin, RoleType.slayer])
   addChampion('Tahm Kench', ChampionTier.One, images.tahmKench, [OriginType.fortune], [RoleType.brawler])
   addChampion('Twisted Fate', ChampionTier.One, images.twistedFate, [OriginType.cultist], [RoleType.mage])
   addChampion('Brand', ChampionTier.One, images.brand, [OriginType.dragonsoul], [RoleType.mage])
