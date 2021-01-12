@@ -29,7 +29,7 @@ const addRoles = (roles: Role[]) => {
   addRole(RoleType.duelist, images.duelist, [2, 4, 6, 8], "")
   addRole(RoleType.executioner, images.executioner, [2, 3, 4], "")
   addRole(RoleType.keeper, images.keeper, [2, 4, 6], "")
-  addRole(RoleType.mage, images.mage, [3, 6, 9], "")
+  addRole(RoleType.mage, images.mage, [3, 5, 7], "")
   addRole(RoleType.mystic, images.mystic, [2, 4], "")
   addRole(RoleType.blacksmith, images.blacksmith, [1], "")
   addRole(RoleType.sharpshooter, images.sharpshooter, [2, 4, 6], "")
