@@ -21,7 +21,7 @@ const addItems = (items: Item[]) => {
   addItem(ItemType.bfSword, images.bfSword, ItemCombinationType.none)
   addItem(ItemType.chainVest, images.chainVest, ItemCombinationType.none)
   addItem(ItemType.giantsBelt, images.giantsBelt, ItemCombinationType.none)
-  addItem(ItemType.largeRod, images.largeRod, ItemCombinationType.none)
+  addItem(ItemType.largeRod, images.needlesslyLargeRod, ItemCombinationType.none)
   addItem(ItemType.negatronCloak, images.negatronCloak, ItemCombinationType.none)
   addItem(ItemType.recurveBow, images.recurveBow, ItemCombinationType.none)
   addItem(ItemType.spatula, images.spatula, ItemCombinationType.none)

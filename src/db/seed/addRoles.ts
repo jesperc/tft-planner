@@ -25,16 +25,17 @@ const addRoles = (roles: Role[]) => {
   addRole(RoleType.adept, images.adept, [2, 3, 4], "")
   addRole(RoleType.assassin, images.assassin, [2, 4, 6], "")
   addRole(RoleType.brawler, images.brawler, [2, 4, 6], "")
-  addRole(RoleType.dazzler, images.dazzler, [2, 4], "")
+  addRole(RoleType.slayer, images.slayer, [3, 6], "")
   addRole(RoleType.duelist, images.duelist, [2, 4, 6, 8], "")
-  addRole(RoleType.hunter, images.hunter, [2, 3, 4, 5], "")
+  addRole(RoleType.executioner, images.executioner, [2, 3, 4], "")
   addRole(RoleType.keeper, images.keeper, [2, 4, 6], "")
   addRole(RoleType.mage, images.mage, [3, 6, 9], "")
   addRole(RoleType.mystic, images.mystic, [2, 4], "")
-  addRole(RoleType.shade, images.shade, [2, 3, 4], "")
+  addRole(RoleType.blacksmith, images.blacksmith, [1], "")
   addRole(RoleType.sharpshooter, images.sharpshooter, [2, 4, 6], "")
   addRole(RoleType.vanguard, images.vanguard, [2, 4, 6], "")
   addRole(RoleType.emperor, images.emperor, [1], "")
+  addRole(RoleType.syphoner, images.syphoner, [2, 4], "")
 }
 
 export default addRoles

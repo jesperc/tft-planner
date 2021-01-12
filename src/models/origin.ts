@@ -3,34 +3,34 @@ import Buff from './buff'
 export enum OriginType {
   cultist,
   divine,
-  dusk,
+  fabled,
   enlightened,
   elderwood,
   exile,
   fortune,
-  moonlight,
+  daredevil,
   ninja,
   spirit,
   warlord,
   theBoss,
-  tormented,
+  dragonsoul,
   __length,
 }
 
 const originTypeToStringLut: Map<OriginType, string> = new Map([
   [OriginType.cultist, 'Cultist'],
   [OriginType.divine, 'Divine'],
-  [OriginType.dusk, 'Dusk'],
+  [OriginType.dragonsoul, 'Dragonsoul'],
   [OriginType.enlightened, 'Enlightened'],
   [OriginType.elderwood, 'Elderwood'],
   [OriginType.exile, 'Exile'],
   [OriginType.fortune, 'Fortune'],
-  [OriginType.moonlight, 'Moonlight'],
+  [OriginType.daredevil, 'Daredevil'],
   [OriginType.ninja, 'Ninja'],
   [OriginType.spirit, 'Spirit'],
   [OriginType.warlord, 'Warlord'],
   [OriginType.theBoss, 'The Boss'],
-  [OriginType.tormented, 'Tormented'],
+  [OriginType.fabled, 'Fabled'],
 ])
 
 export const originTypeToString = (type: OriginType): string => {

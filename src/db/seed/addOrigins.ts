@@ -24,17 +24,17 @@ const addOrigins = (origins: Origin[]) => {
 
   addOrigin(OriginType.cultist, images.cultist, [3, 6, 9], "")
   addOrigin(OriginType.divine, images.divine, [2, 4, 6, 8], "")
-  addOrigin(OriginType.dusk, images.dusk, [2, 4, 6], "")
+  addOrigin(OriginType.fabled, images.fabled, [3], "")
   addOrigin(OriginType.enlightened, images.enlightened, [2, 4, 6], "")
   addOrigin(OriginType.elderwood, images.elderwood, [3, 6, 9], "")
   addOrigin(OriginType.exile, images.exile, [1, 2], "")
-  addOrigin(OriginType.fortune, images.fortune, [3], "")
-  addOrigin(OriginType.moonlight, images.moonlight, [3], "")
+  addOrigin(OriginType.fortune, images.fortune, [3, 6], "")
+  addOrigin(OriginType.dragonsoul, images.dragonsoul, [3, 6, 9], "")
   addOrigin(OriginType.ninja, images.ninja, [1, 4], "")
   addOrigin(OriginType.spirit, images.spirit, [2, 4], "")
   addOrigin(OriginType.warlord, images.warlord, [3, 6, 9], "")
   addOrigin(OriginType.theBoss, images.theboss, [1], "")
-  addOrigin(OriginType.tormented, images.tormented, [1], "")
+  addOrigin(OriginType.daredevil, images.daredevil, [1], "")
 }
 
 export default addOrigins

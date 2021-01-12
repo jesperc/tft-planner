@@ -18,6 +18,7 @@ import battlecast from '../../resources/images/Battlecast.png'
 import berserker from '../../resources/images/berserker.png'
 import berserkerAxe from '../../resources/images/berserkerAxe.png'
 import bfSword from '../../resources/images/bfSword.png'
+import blacksmith from '../../resources/images/blacksmith.png'
 import blademaster from '../../resources/images/blademaster.png'
 import blaster from '../../resources/images/blaster.png'
 import blitzcrank from '../../resources/images/blitzcrank.png'
@@ -39,6 +40,7 @@ import cloud from '../../resources/images/cloud.png'
 import crystal from '../../resources/images/crystal.png'
 import cultist from '../../resources/images/cultist.png'
 import cybernetic from '../../resources/images/cybernetic.png'
+import daredevil from '../../resources/images/daredevil.png'
 import darius from '../../resources/images/darius.png'
 import darkstar from '../../resources/images/darkstar.png'
 import darkStarsHeart from '../../resources/images/DarkStarsHeart.png'
@@ -52,6 +54,7 @@ import diana from '../../resources/images/Diana.png'
 import divine from '../../resources/images/divine.png'
 import dragon from '../../resources/images/dragon.png'
 import dragonsClaw from '../../resources/images/dragonsClaw.png'
+import dragonsoul from '../../resources/images/dragonsoul.png'
 import draven from '../../resources/images/draven.png'
 import drMundo from '../../resources/images/DrMundo.png'
 import druid from '../../resources/images/druid.png'
@@ -67,8 +70,10 @@ import elise from '../../resources/images/elise.png'
 import emperor from '../../resources/images/emperor.png'
 import enlightened from '../../resources/images/enlightened.png'
 import evelynn from '../../resources/images/evelynn.png'
+import executioner from '../../resources/images/executioner.png'
 import exile from '../../resources/images/exile.png'
 import ezreal from '../../resources/images/Ezreal.png'
+import fabled from '../../resources/images/fabled.png'
 import fiora from '../../resources/images/fiora.png'
 import fizz from '../../resources/images/Fizz.png'
 import forceOfNature from '../../resources/images/forceOfNature.png'
@@ -126,7 +131,6 @@ import khazix from '../../resources/images/khazix.png'
 import kindred from '../../resources/images/kindred.png'
 import knight from '../../resources/images/knight.png'
 import kogMaw from '../../resources/images/KogMaw.png'
-import largeRod from '../../resources/images/large-rod.png'
 import lastWhisper from '../../resources/images/lastWhisper.png'
 import leBlanc from '../../resources/images/LeBlanc.png'
 import leeSin from '../../resources/images/leeSin.png'
@@ -231,6 +235,7 @@ import singed from '../../resources/images/Singed.png'
 import sion from '../../resources/images/Sion.png'
 import sivir from '../../resources/images/Sivir.png'
 import skarner from '../../resources/images/Skarner.png'
+import slayer from '../../resources/images/slayer.png'
 import sniper from '../../resources/images/sniper.png'
 import sona from '../../resources/images/Sona.png'
 import soraka from '../../resources/images/Soraka.png'
@@ -252,12 +257,15 @@ import swordBreaker from '../../resources/images/swordBreaker.png'
 import swordoftheDivine from '../../resources/images/SwordoftheDivine.png'
 import sylas from '../../resources/images/Sylas.png'
 import syndra from '../../resources/images/Syndra.png'
+import syphoner from '../../resources/images/syphoner.png'
 import tahmKench from '../../resources/images/TahmKench.png'
 import talismanOfLight from '../../resources/images/talismanOfLight.png'
 import taliyah from '../../resources/images/Taliyah.png'
 import talon from '../../resources/images/Talon.png'
 import taric from '../../resources/images/Taric.png'
 import tear from '../../resources/images/tear.png'
+import tryndamere from '../../resources/images/Tryndamere.png'
+import samira from '../../resources/images/Samira.png'
 import teemo from '../../resources/images/Teemo.png'
 import theboss from '../../resources/images/theboss.png'
 import thiefsGloves from '../../resources/images/thiefsGloves.png'
@@ -328,6 +336,7 @@ export default {
   berserker,
   berserkerAxe,
   bfSword,
+  blacksmith,
   blademaster,
   blaster,
   blitzcrank,
@@ -349,6 +358,7 @@ export default {
   crystal,
   cultist,
   cybernetic,
+  daredevil,
   darius,
   darkstar,
   darkStarsHeart,
@@ -362,6 +372,7 @@ export default {
   divine,
   dragon,
   dragonsClaw,
+  dragonsoul,
   draven,
   drMundo,
   druid,
@@ -377,8 +388,10 @@ export default {
   emperor,
   enlightened,
   evelynn,
+  executioner,
   exile,
   ezreal,
+  fabled,
   fiora,
   fizz,
   forceOfNature,
@@ -436,7 +449,6 @@ export default {
   kindred,
   knight,
   kogMaw,
-  largeRod,
   lastWhisper,
   leBlanc,
   leeSin,
@@ -541,6 +553,7 @@ export default {
   sion,
   sivir,
   skarner,
+  slayer,
   sniper,
   sona,
   soraka,
@@ -562,6 +575,7 @@ export default {
   swordoftheDivine,
   sylas,
   syndra,
+  syphoner,
   tahmKench,
   talismanOfLight,
   taliyah,
@@ -586,6 +600,8 @@ export default {
   varus,
   vayne,
   veigar,
+  tryndamere,
+  samira,
   velkoz,
   vi,
   viktor,
