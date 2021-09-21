@@ -20,7 +20,7 @@
     "@types/react-tooltip": "^3.11.0",
     "jest-transform-stub": "^2.0.0",
     "prettier": "^1.19.1",
-    "ssh2": "^0.8.8",
+    "ssh2": "^1.4.0",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   },
